@@ -1,0 +1,17 @@
+Number of variables: 2
+  Variable[0]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32Table1'
+
+  Variable[1]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table12XML'
+
+Number of attributes: 0
+Number of objectives: 5
+  Tr. Coverage: -0.11842105263157894
+  Tr. Complexity: 33.0
+  Model Coverage.: -0.1875
+  MM similarity: -0.08184365
+  SolutionLength: 2.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

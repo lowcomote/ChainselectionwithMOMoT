@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<trafochainselection:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trafochainselection="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0">
+  <transformationchain id="chain1" start="//@modelTransformationRepository/@metamodels.0" final="//@modelTransformationRepository/@metamodels.5" uses="//@modelTransformationRepository/@transformations.1 //@modelTransformationRepository/@transformations.23 //@modelTransformationRepository/@transformations.24" outputMM="//@modelTransformationRepository/@metamodels.5"/>
+  <modelTransformationRepository>
+    <transformations id="KM32Ecore" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.1" complexity="182" coverage="0.5789473684210527"/>
+    <transformations id="KM32JavaSource" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.2" complexity="51" coverage="0.22807017543859648"/>
+    <transformations id="KM32Table" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.3" complexity="20" coverage="0.15789473684210525"/>
+    <transformations id="KM32XML" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.5" complexity="247" coverage="0.49122807017543857"/>
+    <transformations id="Ecore2JavaSource" src="//@modelTransformationRepository/@metamodels.1" target="//@modelTransformationRepository/@metamodels.2" complexity="76" coverage="0.096"/>
+    <transformations id="Ecore2Table" src="//@modelTransformationRepository/@metamodels.1" target="//@modelTransformationRepository/@metamodels.3" complexity="20" coverage="0.072"/>
+    <transformations id="JavaSource2Table" src="//@modelTransformationRepository/@metamodels.2" target="//@modelTransformationRepository/@metamodels.3" complexity="43" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource2XML" src="//@modelTransformationRepository/@metamodels.2" target="//@modelTransformationRepository/@metamodels.5" complexity="13" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource2HTML" src="//@modelTransformationRepository/@metamodels.2" target="//@modelTransformationRepository/@metamodels.4" complexity="20" coverage="0.19047619047619047"/>
+    <transformations id="Table2XML" src="//@modelTransformationRepository/@metamodels.3" target="//@modelTransformationRepository/@metamodels.5" complexity="19" coverage="0.75"/>
+    <transformations id="Table2HTML" src="//@modelTransformationRepository/@metamodels.3" target="//@modelTransformationRepository/@metamodels.4" complexity="66" coverage="0.6666666666666666"/>
+    <transformations id="HTML2XML" src="//@modelTransformationRepository/@metamodels.4" target="//@modelTransformationRepository/@metamodels.5" complexity="74" coverage="0.15217391304347827"/>
+    <transformations id="KM32Ecore1" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.6" complexity="160" coverage="0.543859649122807"/>
+    <transformations id="Ecore12JavaSource" src="//@modelTransformationRepository/@metamodels.6" target="//@modelTransformationRepository/@metamodels.2" complexity="46" coverage="0.096"/>
+    <transformations id="Ecore12Table" src="//@modelTransformationRepository/@metamodels.6" target="//@modelTransformationRepository/@metamodels.3" complexity="14" coverage="0.064"/>
+    <transformations id="KM32JavaSource1" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.7" complexity="41" coverage="0.22807017543859648"/>
+    <transformations id="Ecore2JavaSource1" src="//@modelTransformationRepository/@metamodels.1" target="//@modelTransformationRepository/@metamodels.7" complexity="72" coverage="0.096"/>
+    <transformations id="JavaSource12Table" src="//@modelTransformationRepository/@metamodels.7" target="//@modelTransformationRepository/@metamodels.3" complexity="41" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource12XML" src="//@modelTransformationRepository/@metamodels.7" target="//@modelTransformationRepository/@metamodels.5" complexity="13" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource12HTML" src="//@modelTransformationRepository/@metamodels.7" target="//@modelTransformationRepository/@metamodels.4" complexity="11" coverage="0.19047619047619047"/>
+    <transformations id="Ecore12JavaSource1" src="//@modelTransformationRepository/@metamodels.6" target="//@modelTransformationRepository/@metamodels.7" complexity="56" coverage="0.096"/>
+    <transformations id="KM32Table1" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.8" complexity="16" coverage="0.15789473684210525"/>
+    <transformations id="Ecore2Table1" src="//@modelTransformationRepository/@metamodels.1" target="//@modelTransformationRepository/@metamodels.8" complexity="18" coverage="0.072"/>
+    <transformations id="JavaSource2Table1" src="//@modelTransformationRepository/@metamodels.2" target="//@modelTransformationRepository/@metamodels.8" complexity="37" coverage="0.2857142857142857"/>
+    <transformations id="Table12XML" src="//@modelTransformationRepository/@metamodels.8" target="//@modelTransformationRepository/@metamodels.5" complexity="17" coverage="0.75"/>
+    <transformations id="Table12HTML" src="//@modelTransformationRepository/@metamodels.8" target="//@modelTransformationRepository/@metamodels.4" complexity="58" coverage="0.6666666666666666"/>
+    <transformations id="Ecore12Table1" src="//@modelTransformationRepository/@metamodels.6" target="//@modelTransformationRepository/@metamodels.8" complexity="16" coverage="0.072"/>
+    <transformations id="JavaSource12Table1" src="//@modelTransformationRepository/@metamodels.7" target="//@modelTransformationRepository/@metamodels.8" complexity="37" coverage="0.23809523809523808"/>
+    <transformations id="Table2HTML1" src="//@modelTransformationRepository/@metamodels.3" target="//@modelTransformationRepository/@metamodels.9" complexity="60" coverage="0.6666666666666666"/>
+    <transformations id="JavaSource2HTML1" src="//@modelTransformationRepository/@metamodels.2" target="//@modelTransformationRepository/@metamodels.9" complexity="18" coverage="0.19047619047619047"/>
+    <transformations id="JavaSource12HTML1" src="//@modelTransformationRepository/@metamodels.7" target="//@modelTransformationRepository/@metamodels.9" complexity="15" coverage="0.19047619047619047"/>
+    <transformations id="Table12HTML1" src="//@modelTransformationRepository/@metamodels.8" target="//@modelTransformationRepository/@metamodels.9" complexity="56" coverage="0.6666666666666666"/>
+    <transformations id="HTML12XML" src="//@modelTransformationRepository/@metamodels.9" target="//@modelTransformationRepository/@metamodels.5" complexity="68" coverage="0.14782608695652175"/>
+    <transformations id="KM32JavaSource2" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.10" complexity="54" coverage="0.22807017543859648"/>
+    <transformations id="Ecore2JavaSource2" src="//@modelTransformationRepository/@metamodels.1" target="//@modelTransformationRepository/@metamodels.10" complexity="77" coverage="0.096"/>
+    <transformations id="JavaSource22Table" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.3" complexity="40" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource22XML" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.5" complexity="12" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource22HTML" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.4" complexity="21" coverage="0.19047619047619047"/>
+    <transformations id="Ecore12JavaSource2" src="//@modelTransformationRepository/@metamodels.6" target="//@modelTransformationRepository/@metamodels.10" complexity="47" coverage="0.096"/>
+    <transformations id="KM32JavaSource12" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.10" complexity="45" coverage="0.22807017543859648"/>
+    <transformations id="Ecore2JavaSource12" src="//@modelTransformationRepository/@metamodels.1" target="//@modelTransformationRepository/@metamodels.10" complexity="73" coverage="0.096"/>
+    <transformations id="JavaSource122Table" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.3" complexity="38" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource122XML" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.5" complexity="16" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource122HTML" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.4" complexity="13" coverage="0.19047619047619047"/>
+    <transformations id="Ecore12JavaSource12" src="//@modelTransformationRepository/@metamodels.6" target="//@modelTransformationRepository/@metamodels.10" complexity="57" coverage="0.096"/>
+    <transformations id="JavaSource22Table1" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.8" complexity="36" coverage="0.2857142857142857"/>
+    <transformations id="JavaSource122Table1" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.8" complexity="38" coverage="0.23809523809523808"/>
+    <transformations id="JavaSource22HTML1" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.9" complexity="19" coverage="0.19047619047619047"/>
+    <transformations id="JavaSource122HTML1" src="//@modelTransformationRepository/@metamodels.10" target="//@modelTransformationRepository/@metamodels.9" complexity="16" coverage="0.19047619047619047"/>
+    <metamodels id="metamodels\KM3.ecore"/>
+    <metamodels id="metamodels\Ecore.ecore"/>
+    <metamodels id="metamodels\JavaSource.ecore"/>
+    <metamodels id="metamodels\Table.ecore"/>
+    <metamodels id="metamodels\HTML.ecore"/>
+    <metamodels id="metamodels\XML.ecore"/>
+    <metamodels id="metamodels\Ecore1.ecore"/>
+    <metamodels id="metamodels\JavaSource1.ecore"/>
+    <metamodels id="metamodels\Table1.ecore"/>
+    <metamodels id="metamodels\HTML1.ecore"/>
+    <metamodels id="metamodels\JavaSource2.ecore"/>
+  </modelTransformationRepository>
+</trafochainselection:TransformationModel>

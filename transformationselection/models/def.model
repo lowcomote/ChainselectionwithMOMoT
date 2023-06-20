@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<def:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:def="http://def">
+  <ds d="element created from an A" es="//@ds.1" fs="//@ds.2"/>
+  <ds xsi:type="def:E" e="element created from an A"/>
+  <ds xsi:type="def:F" f="element created from an A"/>
+</def:Root>

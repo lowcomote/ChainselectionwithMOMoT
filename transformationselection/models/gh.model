@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gh:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:gh="http://gh">
+  <gs g="element created from an A"/>
+  <hs h="element created from a B"/>
+  <hs h="element created from a C"/>
+</gh:Root>

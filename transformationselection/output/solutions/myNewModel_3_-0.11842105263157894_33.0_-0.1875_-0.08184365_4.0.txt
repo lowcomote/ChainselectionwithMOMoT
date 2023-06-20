@@ -1,0 +1,35 @@
+Number of variables: 8
+  Variable[0]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32Table1'
+
+  Variable[1]: -Placeholder-
+
+  Variable[2]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32JavaSource1'
+
+  Variable[3]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'JavaSource12Table1'
+
+  Variable[4]: -Placeholder-
+
+  Variable[5]: -Placeholder-
+
+  Variable[6]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table12XML'
+
+  Variable[7]: -Placeholder-
+
+Number of attributes: 3
+  AggregatedFitness: 36.612235297368414
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  TransformationCoverage: -0.11842105263157894
+  StructuralFeatures: 33.0
+  InformationLoss: -0.1875
+  GraphSimilarity: -0.08184365
+  SolutionLength: 4.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

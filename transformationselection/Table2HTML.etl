@@ -1,0 +1,169 @@
+model Table driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/Table"
+};
+
+model HTML driver EMF {
+nsuri = "http://www.html.com"
+};
+
+pre { "Table2TabularHTML transformation starts". println();}
+
+operation String isInteger() : Boolean {
+	if (self.split('\\.').size() - 1 = 0)
+	{ var value : String = 
+				self.regexReplaceAll('\\d','') in
+			(value = '') or (value = '-');
+	}
+		else {false;}
+	}
+
+
+operation String isReal() : Boolean {
+	var dotNb : Integer =
+		self.split('\\.').size() - 1;
+	if (dotNb = 1)
+	{ var value : String = 
+				self->regexReplaceAll('\\.','')->regexReplaceAll('\\d','') in
+			(value = '') or (value = '-');
+	}
+		else {false;}
+	}
+
+operation String isPercentage() : Boolean {
+	if (self.endsWith('%') and not self.startsWith('-'))
+		{ var value : String =
+				self.substring(1,self.size() - 1) in
+			if (value.isInteger() or value.isReal())
+				{ (0 <= value.toReal()) and (value.toReal() <= 100);}
+				else {false;}
+		}
+		else {false;}
+	}
+
+operation String value() : String {
+	var dot : Integer =
+		self.indexOf('.') in
+	if (self.isReal() and (dot > 0))
+		{ if ((self.size() - (dot + 1)) = 1)
+				{ if (self.substring(dot + 2,self.size()) = '0')
+						{ self.substring(1,dot);}
+				  else {self;}
+				}
+				else {
+					if ((self.size() - (dot + 1)) > 1) {
+						{ self.substring(1,dot + 1 + 1);}
+						else {self;}
+					   }
+				   }
+			}
+		else {self;}
+	}
+
+
+
+operation Table!Cell realValue() : Real {
+	if (self.content.isPercentage())
+		{ self.content.substring(1,self.content.size() - 1).toReal() / 100;}
+		else {self.content.toReal();}
+	}
+
+operation OclAny seqWithoutFirst() : Sequence(OclAny) {
+	self.subSequence(2,self.size());
+	}
+
+operation allValidTables : Sequence(Table!Table) {
+	Table!Table.allInstances().select(t|t.rows.seqWithoutFirst().
+			forAll(r|r.cells.seqWithoutFirst().
+				forAll(c|(c.content.isInteger() or c.content.isReal() or
+						c.content.isPercentage()))));
+	}
+
+operation Table!Cell valueNotNull() : Boolean {
+	self.realValue() <> 0;
+	}
+
+operation html : HTML!HTML { OclUndefined;}
+
+/*
+entrypoint rule HTML() {
+	to
+		html : HTML!HTML (
+			head = head,
+			body = body
+		),
+		head : HTML!HEAD (
+			headElements = title
+		),
+		title : HTML!TITLE (
+			value = ''
+		),
+		body : HTML!BODY
+	do {
+		thisModule.html = html;
+	}
+}
+*/
+
+rule Table2TABLE 
+	transform
+		table : Table!Table 
+	to
+		tab : HTML!TABLE 
+	{
+		guard : table.rows.size() > 0 and border = '1' and 
+			tab.trs = this.Row2TRwithTH(table.rows.first()) and
+			tab.trs = table.rows->subSequence(2,table.rows.size()).
+				collect(row|this.Row2TRwithTD(row))
+		
+		this.html.body.bodyElements = tab;
+	}
+
+
+@lazy rule Row2TRwithTH 
+	transform
+		row : Table!Row
+	to
+		tr : HTML!TR {
+			tr.tds = row.cells.
+				collect(cell|this.Cell2TH(cell));
+		}
+
+
+@lazy rule Cell2TH 
+	transform
+		cell : Table!Cell
+	to
+		th : HTML!TH {
+			th.value = cell.value();
+		}
+
+@lazy rule Row2TRwithTD 
+	transform
+		row : Table!Row
+	to
+		tr : HTML!TR {
+			tr.tds = this.Cell2TD(row.cells.first());
+			tr.tds = row.cells.subSequence(2,row.cells.size()).
+				collect(cell|this.Cell2TDRightAlign(cell));
+		}
+
+
+@lazy rule Cell2TD 
+	transform
+		cell : Table!Cell
+	to
+		td : HTML!TD {
+			td.value = cell.value();
+		}
+
+
+@lazy rule Cell2TDRightAlign 
+	transform
+		cell : Table!Cell
+	to
+		td : HTML!TD {
+			td.value = cell.value();
+			td.align = 'right';
+		}
+
+post { "Table2TabularHTML transformation starts". println();}

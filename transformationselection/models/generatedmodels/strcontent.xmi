@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ASCII"?>
+<structuredContent:Content xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:structuredContent="http://www.example.org/structuredContent" xsi:schemaLocation="http://www.example.org/structuredContent ../structuredContent.ecore">
+  <tables id="project_deliverables">
+    <rows>
+      <cells content="Deliverable"/>
+      <cells content="WP"/>
+      <cells content="Due"/>
+    </rows>
+    <rows>
+      <cells content="D0.4"/>
+      <cells content="0"/>
+      <cells content="20"/>
+    </rows>
+    <rows>
+      <cells content="D0.5"/>
+      <cells content="0"/>
+      <cells content="23"/>
+    </rows>
+    <rows>
+      <cells content="D0.1"/>
+      <cells content="0"/>
+      <cells content="24"/>
+    </rows>
+    <rows>
+      <cells content="D0.2"/>
+      <cells content="0"/>
+      <cells content="30"/>
+    </rows>
+    <rows>
+      <cells content="D0.4"/>
+      <cells content="0"/>
+      <cells content="36"/>
+    </rows>
+  </tables>
+  <tables id="wp0_deliverable">
+    <rows>
+      <cells content="Deliverable"/>
+      <cells content="Title"/>
+      <cells content="Due"/>
+    </rows>
+    <rows>
+      <cells content="D0.1"/>
+      <cells content="D1"/>
+      <cells content="24"/>
+    </rows>
+    <rows>
+      <cells content="D0.2"/>
+      <cells content="D2"/>
+      <cells content="30"/>
+    </rows>
+    <rows>
+      <cells content="D0.4"/>
+      <cells content="D3"/>
+      <cells content="36"/>
+    </rows>
+  </tables>
+  <tables id="wp0_deliverable">
+    <rows>
+      <cells content="Deliverable"/>
+      <cells content="Title"/>
+      <cells content="Due"/>
+    </rows>
+    <rows>
+      <cells content="D0.4"/>
+      <cells content="D4"/>
+      <cells content="20"/>
+    </rows>
+    <rows>
+      <cells content="D0.5"/>
+      <cells content="D5"/>
+      <cells content="23"/>
+    </rows>
+  </tables>
+</structuredContent:Content>

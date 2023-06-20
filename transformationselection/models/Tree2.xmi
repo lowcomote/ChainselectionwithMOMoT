@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tree xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="TreeDsl" label="NewTree1">
+  <children label="NewChild1">
+    <children label="NewGrandChild1"/>
+    <children label="NewGrandChild2"/>
+  </children>
+  <children label="NewChild2">
+    <children label="NewGrandChild3"/>
+  </children>
+</Tree>

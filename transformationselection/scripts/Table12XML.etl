@@ -1,0 +1,49 @@
+model Table1 driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/Table1"
+};
+
+model XML driver EMF {
+nsuri = "xml.com"
+};
+
+pre {
+	"Table2XML transformation starts".println();
+}
+
+rule Table2TABLE 
+	transform
+		table : Table1!Table 
+	to
+		xml : XML!Element 
+	{
+		guard : table.rows.size() > 0
+			//xml.name = 'abc';  //delete
+			//tab.trs = Row2TRwithTH(table.rows.first());
+			//tab.trs = table.rows.first().equivalents("Row2TRwithTH").flatten();
+			xml.children = table.rows.first().equivalents("Row2TRwithTH");
+			
+			
+	}
+	
+rule Row2TRwithTH 
+	transform
+		row : Table1!Row
+	to
+		xml : XML!Element {
+			xml.children = row.cells.collect(cell|cell.equivalent("Cell2TH"));
+		
+		}
+	
+rule Cell2TH 
+	transform
+		cell : Table1!Cell
+	to
+		xml : XML!Element {
+			xml.name = 'th';
+		
+		}
+		
+
+post {
+	"Table2XML transformation ends".println();
+}

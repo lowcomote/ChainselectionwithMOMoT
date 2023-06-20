@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trafochainselection:TransformationModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:trafochainselection="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0"
+    xsi:schemaLocation="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0 /transformationselection/metamodel/trafochainselection.ecore">
+  <transformationchain
+      id="ch1"
+      inputModel="models/sample-km3.xmi"
+      start="//@modelTransformationRepository/@metamodels.0"
+      uses="//@modelTransformationRepository/@transformations.0"/>
+  <modelTransformationRepository>
+    <transformations
+        id="KM32XML"
+        src="//@modelTransformationRepository/@metamodels.0"
+        target="//@modelTransformationRepository/@metamodels.1"/>
+    <metamodels
+        id="KM3"/>
+    <metamodels
+        id="XML"/>
+  </modelTransformationRepository>
+</trafochainselection:TransformationModel>

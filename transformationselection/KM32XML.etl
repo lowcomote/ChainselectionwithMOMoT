@@ -1,0 +1,214 @@
+model KM3 driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/KM3"
+};
+
+model XML driver EMF {
+nsuri = "xml.com"
+};
+
+pre {"KM32XML Transformation starts".println(); }
+
+operation KM3!ModelElement getFQL() : String {
+	return self.getFQLWithSeparator('::');
+	}
+
+operation KM3!ModelElement getFQLWithSeparator(separator: String) : String {
+	if (self.isKindOf(KM3!EnumLiteral)) {
+		if (self.enum.isDefined()) 
+			{return self.enum.getFQLWithSeparator(separator) + separator + self.name;}
+		else 
+			{return self.name;}
+		}
+	else {
+		if (self.isKindOf(KM3!StructuralFeature)) {
+				if (not self.owner.isUndefined()) 
+					{return self.owner.getFQLWithSeparator(separator) + separator + self.name;}
+				else
+					{return self.name;}
+				}
+		else {
+			if (self.isKindOf(KM3!Classifier)) {
+				if (not self.package.isUndefined()) 
+					{return self.package.getFQLWithSeparator(separator) + separator + self.name;}
+				else 
+					{return self.name;}
+				}
+			else
+				{return self.name;}
+			}
+		}
+	}	
+
+
+rule Metamodel 
+	transform 
+		i: KM3!Metamodel
+	to
+		o: XML!Root {
+			"rrr".println();
+			o.name = 'Metamodel';
+			o.children = i.contents.equivalents().flatten();
+			"123".println();
+		}
+
+
+rule Package
+	transform
+		i: KM3!Package
+	to
+		attribute_name: XML!Attribute, o: XML!Element {
+				"lmnop".println();
+				attribute_name.name = 'name';
+				attribute_name.value = i.name;
+				o.name = 'Package';
+				o.children = Sequence{attribute_name}.includingAll(i.contents.equivalents().flatten());
+		}
+
+rule Class
+	transform
+		i: KM3!Class
+	to
+		attribute_name: XML!Attribute, o: XML!Element, attribute_isAbstract: XML!Attribute, reference_supertypes: XML!Attribute  {
+			"xyz".println();
+			attribute_name.name = 'name';
+			attribute_name.value = i.name;
+
+			o.name = 'Class';
+			o.value = i.name;
+			attribute_isAbstract.name = 'isAbstract';
+			attribute_isAbstract.value = i.isAbstract.toString();
+			reference_supertypes.name = 'supertypes';
+			var acc:String='';
+			for(e in i.supertypes) {
+				reference_supertypes.value = ((acc = '') ? acc : (acc + ', ' )) + e.getFQL();
+			}
+			o.children = Sequence{attribute_name, attribute_isAbstract, reference_supertypes}.includingAll(i.structuralFeatures.equivalents().flatten());
+			"505050".println();
+			
+			//reference_supertypes.value ::= i.supertypes.select(acc | ((acc = '') ? acc : (acc + ', ' )) + e.getFQL());
+		}
+
+
+rule DataType
+	transform
+		i: KM3!DataType
+	to
+	attribute_name: XML!Attribute, o: XML!Element {
+			"00".println();
+			attribute_name.name = 'name';
+			attribute_name.value = i.name;
+			o.name = 'DataType';
+			o.value = i.name;
+			o.children = Sequence{attribute_name};
+			"1".println();
+		}
+
+
+rule Enumeration
+	transform
+		i: KM3!Enumeration
+	to
+		attribute_name: XML!Attribute, o: XML!Element {
+			"fbjhf".println();
+			attribute_name.name = 'name';
+			attribute_name.value = i.name;
+			o.name = 'Enumeration';
+			o.value = i.name;
+			o.children = Sequence{attribute_name}.includingAll(i.literals);
+			
+		}
+
+rule EnumLiteral
+	transform
+		i: KM3!EnumLiteral
+	to
+		attribute_name: XML!Attribute, o: XML!Element {
+		"abc".println();
+			attribute_name.name = 'name';
+			attribute_name.value = i.name;
+		
+			o.name = 'EnumLiteral';
+			o.value = i.name;
+			o.children = Sequence{attribute_name};
+			
+	}
+
+
+@abstract 
+rule StructuralFeature 
+	transform
+		i: KM3!StructuralFeature
+	to
+		attribute_lower: XML!Attribute, oo: XML!Element {
+			var attribute_upper: new XML!Attribute;
+			var attribute_isOrdered: new XML!Attribute;
+			var reference_type: new XML!Attribute;
+			"qwerty".println();
+			attribute_lower.name = 'lower';
+			attribute_lower.value = i.lower.toString();
+		
+			attribute_upper.name = 'upper';
+			attribute_upper.value = i.upper.toString();
+		
+			attribute_isOrdered.name = 'isOrdered';
+			attribute_isOrdered.value = i.isOrdered.toString();
+		
+			reference_type.name = 'type';
+			reference_type.value = i.type.getFQL();
+			
+			oo.value = i.name;
+			oo.children = Sequence{attribute_lower, attribute_upper, attribute_isOrdered, reference_type};
+	}
+
+
+rule Attribute  
+	transform
+		i: KM3!Attribute
+	to
+	attribute_name: XML!Attribute, o: XML!Element  extends StructuralFeature {
+			"asdf".println();
+			var attribute_isUnique: new XML!Attribute;
+			attribute_name.name = 'name';
+			attribute_name.value = i.name;
+			
+			attribute_isUnique.name = 'isUnique';
+			attribute_isUnique.value = i.forAll(s|s.asSet().notEmpty()).toString();
+			
+			o.name = 'Attribute';
+			o.value = i.name;
+			//o.children = Sequence{attribute_name, attribute_lower, attribute_upper, attribute_isOrdered, attribute_isUnique, reference_type};
+			o.children = Sequence{attribute_name, attribute_isUnique};
+			
+			
+			"abc".println();
+	}
+
+
+rule Reference  
+	transform
+		i: KM3!Reference
+	to
+		attribute_name: XML!Attribute, o: XML!Element extends StructuralFeature {
+			"def".println();
+			var attribute_isContainer: new XML!Attribute; 
+			var reference_opposite: new XML!Attribute;
+			attribute_name.name = 'name';
+			attribute_name.value = i.name;	
+	
+			attribute_isContainer.name = 'isContainer';
+			attribute_isContainer.value = i.isContainer.toString();
+			
+			reference_opposite.name = 'opposite';
+			reference_opposite.value = (i.opposite.isUndefined() ? '' :  i.opposite.getFQL());
+			
+			o.name = 'Reference';
+			o.value = i.name;
+			//o.children ::= Sequence{attribute_name, attribute_lower, attribute_upper, attribute_isOrdered, attribute_isContainer, reference_type, reference_opposite};
+			o.children = Sequence{attribute_name, attribute_isContainer, reference_opposite};
+			
+			
+			"lkhkj".println();
+		}
+
+
+post {"KM32XML Transformation ends".println(); }

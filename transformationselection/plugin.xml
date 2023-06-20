@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated trafochainselection -->
+      <package
+            uri="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0"
+            class="trafochainselection.TrafochainselectionPackage"
+            genModel="metamodel/trafochainselection.genmodel"/>
+   </extension>
+
+</plugin>

@@ -1,0 +1,35 @@
+model Graph driver EMF {
+nsuri = "Graph"
+};
+
+model SimpleTrace driver EMF {
+nsuri = "SimpleTrace"
+};
+
+pre {"Graph2SimpleTrace transformation starts".println();}
+
+rule Graph2Trace
+	transform g:Graph!Graph
+		to st:SimpleTrace!Trace {
+	st.links=g.elements;//delete
+	}
+	
+rule Node2TraceLink
+	transform n:Graph!Node
+	to t:SimpleTrace!TraceLink {
+	var e = Graph!Edge;
+	t.targets=n.outgoing;
+	t.sources=n.incoming;
+	t.description=n.label;//delete
+}
+
+rule Edge2TraceLink
+	transform e:Graph!Edge
+	to s:SimpleTrace!TraceLink {
+	s.sources=e.source.equivalents();
+	s.targets=e.target.equivalents();
+	}
+	
+post {
+"Graph2SimpleTrace transformation finished".println();
+}

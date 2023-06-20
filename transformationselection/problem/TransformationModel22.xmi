@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trafochainselection:TransformationModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:trafochainselection="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0">
+  <transformationchain
+      id="chain"
+      start="//@modelTransformationRepository/@metamodels.0"
+      final="//@modelTransformationRepository/@metamodels.4"/>
+  <modelTransformationRepository>
+    <transformations
+        id="Tree2Graph"
+        src="//@modelTransformationRepository/@metamodels.0"
+        target="//@modelTransformationRepository/@metamodels.1"/>
+    <transformations
+        id="Tree2SimpleTrace"
+        src="//@modelTransformationRepository/@metamodels.0"
+        target="//@modelTransformationRepository/@metamodels.2"/>
+    <transformations
+        id="Graph2SimpleTrace"
+        src="//@modelTransformationRepository/@metamodels.1"
+        target="//@modelTransformationRepository/@metamodels.2"/>
+    <transformations
+        id="SimpleTrace2TM"
+        src="//@modelTransformationRepository/@metamodels.2"
+        target="//@modelTransformationRepository/@metamodels.3"/>
+    <transformations
+        id="TM2DB"
+        src="//@modelTransformationRepository/@metamodels.3"
+        target="//@modelTransformationRepository/@metamodels.4"/>
+    <metamodels
+        id="metamodels/Tree.ecore"/>
+    <metamodels
+        id="metamodels/Graph.ecore"/>
+    <metamodels
+        id="metamodels/SimpleTrace.ecore"/>
+    <metamodels
+        id="metamodels/TM.ecore"/>
+    <metamodels
+        id="metamodels/DB.ecore"/>
+  </modelTransformationRepository>
+</trafochainselection:TransformationModel>

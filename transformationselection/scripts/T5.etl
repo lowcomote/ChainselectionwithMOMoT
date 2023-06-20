@@ -1,0 +1,36 @@
+model ABC driver EMF {
+nsuri = "http://abc"
+};
+
+model GH driver EMF {
+nsuri = "http://gh"
+};
+
+rule Root5
+	transform s : ABC!Root
+	to t : GH!Root {
+	t.gs ::= s.as;
+	//t.hs ::= s.bs.includingAll(s.cs);
+	
+
+}
+
+rule A2G
+transform s: ABC!A
+to t: GH!G{
+	//t.g = "element created from "+ s.a;
+	
+} 
+
+rule B2H
+transform s: ABC!B
+to t: GH!H {
+	//t.h = "element created from "+ s.b;
+} 
+
+rule C2H
+transform s: ABC!C
+to t: GH!H {
+	//t.h = "element created from "+ s.c;
+}
+

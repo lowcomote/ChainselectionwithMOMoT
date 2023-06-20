@@ -1,0 +1,30 @@
+model SimpleTrace driver EMF {
+nsuri = "SimpleTrace"
+};
+
+model TM driver EMF {
+nsuri = "TM"
+};
+
+pre{
+	"SimpleTrace2TM transformation begins".println();
+}
+
+rule Trace2TypeMap
+	transform t:SimpleTrace!Trace
+	to n:TM!TypeMap {
+	n.mappings=t.links.equivalent();//delete
+	}
+	
+rule TraceLink2TypeMapping
+	transform tr:SimpleTrace!TraceLink
+	to t:TM!TypeMapping {
+	t.source=tr.sources.toString();
+	t.target=tr.targets.toString();//delete
+	t.map = tr.trace.equivalent();
+	}
+//[TypeMapping map TypeMap]
+	
+post{
+	"SimpleTrace2TM transformation ends".println();
+}

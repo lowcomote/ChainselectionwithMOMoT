@@ -1,0 +1,61 @@
+model Java driver EMF {
+nsuri = "http://www.eclipse.org/MoDisco/Java/0.2.incubation/java"
+};
+
+model Graph1 driver EMF {
+nsuri = "http://graph"
+};
+
+pre {"Java2Graph1 transformation starts".println();}
+
+operation Java!ClassDeclaration package(): Java!Package {
+	return self.package;
+}
+
+operation Java!Package rootPackage() : Java!Package {
+	if (self.package.isUndefined()) {
+		return self;
+	} else {
+		return self.package.rootPackage();
+	}
+} 
+
+operation Java!ClassDeclaration type(): String {
+	if (not self.modifier.isUndefined()) {
+		if (self.modifier.inheritance=Java!InheritanceKind#final) {
+			return 'F';
+		} else {
+			if (self.modifier.inheritance=Java!InheritanceKind#abstract) {
+				return 'A';
+			} else {
+				return 'N';
+			}
+		}
+	} else {
+		return 'N';
+	}
+}
+
+rule toNode
+	transform inn : Java!ClassDeclaration 
+	to out : Graph1!Node {
+		
+		guard : not inn.package.isUndefined() and inn.package.rootPackage().name.indexOf('java') < 0
+		
+		out.name := inn.name;
+		out.type := inn.type();
+		out.size := inn.bodyDeclarations -> select(bd | bd.isTypeOf(Java!FieldDeclaration)) -> size() + 0.0d;
+		
+}
+
+rule toEdge
+	transform inn : Java!FieldDeclaration
+	to out : Graph1!Edge {
+		guard : not inn.type.isUndefined() and not inn.type.type.isUndefined() and inn.type.type.isTypeOf(Java!ClassDeclaration)
+				and not inn.type.type.package().isUndefined() and inn.type.type.package().rootPackage().name.indexOf('java') < 0
+				and not inn.abstractTypeDeclaration.isUndefined() and inn.abstractTypeDeclaration.isTypeOf(Java!ClassDeclaration)
+				and not inn.abstractTypeDeclaration.package.isUndefined() and inn.abstractTypeDeclaration.package.rootPackage().name.indexOf('java') < 0
+				
+		out.source := inn.abstractTypeDeclaration.equivalent();
+		out.target := inn.type.type.equivalent();
+	}

@@ -1,0 +1,97 @@
+model KM3 driver EMF {nsuri = "http://www.eclipse.org/gmt/2005/KM3"};
+model Ecore driver EMF {nsuri = "http://www.eclipse.org/emf/2002/Ecore1"};
+pre {
+	"KM32EMF Transformation starts".println();
+}
+rule Package
+transform e : KM3!Package
+to c : Ecore!EPackage
+ {
+	c.name = e.name;
+	c.eClassifiers = e.contents.select(e|e.isKindOf(KM3!Classifier)).equivalent();
+	c.eSubpackages = e.contents.select(e|e.isKindOf(KM3!Package)).equivalent();
+	c.nsURI = e.getMetadata("nsURI");
+	c.nsPrefix = e.getMetadata("nsPrefix");
+}
+rule PrimitiveType
+transform e : KM3!DataType
+to c : Ecore!EDataType
+ {
+	c.name = e.name;
+}
+rule Reference
+transform e : KM3!Reference
+to c : Ecore!EReference
+ {
+	c.name = e.name;
+	c.eType = e.type.equivalent();
+	c.containment = e.isContainer;
+}
+rule Class
+transform e : KM3!Class
+to c : Ecore!EClass
+ {
+	c.name = e.name;
+	c.eStructuralFeatures = e.structuralFeatures.equivalent();
+	c.eSuperTypes = e.supertypes.equivalent();
+	c.abstract = e.isAbstract;
+}
+rule PrimitiveAttribute
+transform e : KM3!Attribute
+to c : Ecore!EAttribute
+
+ {
+
+guard : e.type.isKindOf(KM3!DataType) or e.type.isKindOf(KM3!Enumeration)
+	c.name = e.name;
+	c.lowerBound = e.lower;
+}
+rule NonPrimitiveAttribute
+transform e : KM3!Attribute
+to c : Ecore!EReference
+
+
+ {
+guard : not (e.type.isKindOf(KM3!DataType) or e.type.isKindOf(KM3!Enumeration))
+	c.name = e.name;
+	c.lowerBound = e.lower;
+}
+rule Enumeration
+transform e : KM3!Enumeration
+to c : Ecore!EEnum
+ {
+	c.name = e.name;
+}
+rule EnumLiteral
+transform e : KM3!EnumLiteral
+to c : Ecore!EEnumLiteral
+ {
+	c.name = e.name;
+}
+rule Operation
+transform io : KM3!Operation
+to oo : Ecore!EOperation
+ {
+	oo.name = io.name;
+	oo.eParameters = io.parameters.equivalent();
+}
+rule Parameter
+transform ip : KM3!Parameter
+to op : Ecore!EParameter
+ {
+	op.name = ip.name;
+}
+post {
+	"KM32EMF Transformation ends".println();
+}
+/*
+operation KM3!Package getMetadata(name : String) : String {
+	var comment : String = self.commentsBefore.select(e : String|e.startsWith("-- @" + name + " ")).first();
+	if (comment.isUndefined()) {
+		comment = "Undefined";
+	}
+	else {
+		comment = comment.substring(6 + name.size(), comment.size());
+	}
+}
+*/

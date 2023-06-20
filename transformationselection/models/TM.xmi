@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TM="TM" xsi:schemaLocation="TM metamodels/TM.ecore">
+  <TM:TypeMapping source="[]"/>
+  <TM:TypeMapping source="[org.eclipse.emf.ecore.impl.DynamicEObjectImpl@5e76a2bb (eClass: org.eclipse.emf.ecore.impl.EClassImpl@ba1f559 (name: TraceLink) (instanceClassName: null) (abstract: false, interface: false))]"/>
+  <TM:TypeMapping source="[org.eclipse.emf.ecore.impl.DynamicEObjectImpl@757194dc (eClass: org.eclipse.emf.ecore.impl.EClassImpl@ba1f559 (name: TraceLink) (instanceClassName: null) (abstract: false, interface: false))]"/>
+</xmi:XMI>

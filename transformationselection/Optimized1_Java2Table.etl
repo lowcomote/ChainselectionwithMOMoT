@@ -1,0 +1,46 @@
+model JavaSource driver EMF {nsuri = "http://www.eclipse.org/gmt/2005/JavaSource"};
+model Table driver EMF {nsuri = "http://www.eclipse.org/gmt/2005/Table"};
+pre {
+	"Java2Table Transformation starts".println();
+}
+rule Main
+transform s : JavaSource!JavaSource
+to t : Table!Table, first_row : Table!Row, first_col : Table!Cell
+ {
+	t.rows = Sequence{first_row, allMethodDefs().collect(e|e.equivalents("row"))}.flatten();
+	first_row.cells = Sequence{first_col, allMethodDefs().collect(md|md.equivalents("tFilled"))}.flatten();
+}
+rule TitleCols
+transform md : JavaSource!MethodDefinition
+to tFilled : Table!Cell
+ {
+}
+rule MethodDefinition
+transform m : JavaSource!MethodDefinition
+to row : Table!Row, title_cel : Table!Cell
+ {
+	row.cells = Sequence{title_cel, allMethodDefs().collect(md|md.equivalents("cell"))}.flatten();
+}
+rule DataCells
+transform md : JavaSource!MethodDefinition
+to cell : Table!Cell
+ {
+	var m : JavaSource!MethodDefinition;
+}
+post {
+	"Java2Table Transformation ends".println();
+}
+
+operation allMethodDefs() : Sequence(JavaSource!MethodDefinition) {
+	if (JavaSource!ClassDeclaration.isDefined() and JavaSource!MethodDefinition.class.isDefined()) {
+		return JavaSource!MethodDefinition.all.sortBy(e|e.class.name + "_" + e.name);
+	}
+	else {
+		return null;
+	}
+}
+operation JavaSource!MethodDefinition computeContent(col : JavaSource!MethodDefinition) : Integer {
+	if (JavaSource!MethodInvocation.isDefined() and JavaSource!MethodDefinition.isDefined()) {
+		return self.invocations.select(i|i.method.name = col.name and i.method.class.name = col.class.name).size();
+	}
+}

@@ -1,0 +1,21 @@
+model Tree driver EMF {
+nsuri = "TreeDsl"
+};
+
+model SimpleTrace driver EMF {
+nsuri = "SimpleTrace "
+};
+
+pre {"Tree2TraceLink transformation starts".println();}
+
+rule Tree2TraceLink
+	transform t:Tree!Tree
+	to n:SimpleTrace!TraceLink {
+	n.description = t.label;//delete
+	n.sources=t.parent.equivalents();
+	n.targets=t.children;
+}
+
+post {
+"Tree2SimpleTrace transformation finished".println();
+}

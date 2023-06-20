@@ -1,0 +1,51 @@
+model Ecore driver EMF {
+nsuri = "http://www.eclipse.org/emf/2002/Ecore"
+};
+
+model JavaSource1 driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/JavaSource1"
+};
+
+pre {"EMF2Java Transformation starts".println(); }
+
+
+rule Package
+	transform s:Ecore!EPackage
+	to t: JavaSource1!JavaSource {
+		t.classes = s.eClassifiers.equivalent();
+	}
+
+
+rule Eclass
+	transform s: Ecore!EClass
+	to t: JavaSource1!ClassDeclaration{
+	t.name = s.name;
+	//for(st in s.eSuperTypes){t.superclass ::= st;}
+	//if(s.eSuperTypes.size()>0)	
+	t.superclass = s.eSuperTypes.first().equivalent();
+	}
+
+rule Attr2Methods
+	transform s:Ecore!EAttribute
+	to t1:JavaSource1!MethodDefinition, t2:JavaSource1!MethodDefinition, p: JavaSource1!Property{
+	t1.class = s.eContainingClass.equivalent();
+	t1.name = 'set'+s.name.firstToUpperCase();
+	t2.class = s.eContainingClass.equivalent();
+	t2.name = 'get'+s.name.firstToUpperCase();
+	//p.name = s.name;
+	p.owner = s.eContainingClass.equivalent();//delete
+	}
+
+
+rule Ref2Methods
+	transform s:Ecore!EReference
+	to t1:JavaSource1!MethodDefinition, t2:JavaSource1!MethodDefinition, p: JavaSource1!Property {
+	t1.class = s.eContainingClass.equivalent();
+	t1.name = 'set'+s.name.firstToUpperCase();
+	t2.class = s.eContainingClass.equivalent();
+	t2.name = 'get'+s.name.firstToUpperCase();
+	p.name = s.name;
+	p.owner = s.eContainingClass.equivalent();//delete
+	}
+
+post {"EMF2Java Transformation ends".println(); }

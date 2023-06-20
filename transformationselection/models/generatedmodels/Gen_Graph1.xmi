@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Graph="Graph" xsi:schemaLocation="Graph src/org/eclipse/epsilon/examples/staticanalyser/models/Graph.ecore">
+  <Graph:Node outgoing="/6 /9" label="NewTree1"/>
+  <Graph:Node outgoing="/7 /8" incoming="/6" label="NewChild1"/>
+  <Graph:Node incoming="/7" label="NewGrandChild1"/>
+  <Graph:Node incoming="/8" label="NewGrandChild2"/>
+  <Graph:Node outgoing="/10" incoming="/9" label="NewChild2"/>
+  <Graph:Node incoming="/10" label="NewGrandChild3"/>
+  <Graph:Edge target="/1" source="/0"/>
+  <Graph:Edge target="/2" source="/1"/>
+  <Graph:Edge target="/3" source="/1"/>
+  <Graph:Edge target="/4" source="/0"/>
+  <Graph:Edge target="/5" source="/4"/>
+</xmi:XMI>

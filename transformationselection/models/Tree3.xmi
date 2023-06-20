@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tree xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="TreeDsl"
+    xsi:schemaLocation="TreeDsl Tree.ecore"
+    label="M">
+  <children
+      label="N">
+    <children
+        label="N_child1"/>
+    <children
+        label="N_child2"/>
+  </children>
+  <children
+      label="O">
+    <children
+        label="O_child1"/>
+  </children>
+</Tree>

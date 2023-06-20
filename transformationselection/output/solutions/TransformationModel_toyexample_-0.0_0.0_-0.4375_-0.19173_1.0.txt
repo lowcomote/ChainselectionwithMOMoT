@@ -1,0 +1,31 @@
+Number of variables: 6
+  Variable[0]: -Placeholder-
+
+  Variable[1]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain'
+- parameter 'transformation' => 'KM32XML'
+- node #1 => trafochainselection.impl.TransformationChainImpl@15fb7a32 (id: chain, inputModel: null)
+- node #2 => trafochainselection.impl.MetamodelImpl@795fd838 (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@178270b2 (id: KM32XML, metrics: null, complexity: 0, coverage: 0.0)
+- node #4 => trafochainselection.impl.MetamodelImpl@109d724c (id: metamodels\XML.ecore)
+
+  Variable[2]: -Placeholder-
+
+  Variable[3]: -Placeholder-
+
+  Variable[4]: -Placeholder-
+
+  Variable[5]: -Placeholder-
+
+Number of attributes: 3
+  AggregatedFitness: 0.37077000000000004
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  TransformationCoverage: -0.0
+  StructuralFeatures: 0.0
+  InformationLoss: -0.4375
+  GraphSimilarity: -0.19173
+  SolutionLength: 1.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

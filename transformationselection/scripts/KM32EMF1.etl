@@ -1,0 +1,144 @@
+model KM3 driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/KM3"
+};
+
+model Ecore1 driver EMF {
+nsuri = "http://www.eclipse.org/emf/2002/Ecore1"
+};
+
+pre {"KM32EMF Transformation starts".println(); }
+
+/*
+operation KM3!Package getMetadata(name:String) : String {
+	var comment : String = self.commentsBefore.select(e | e.startsWith('-- @' + name + ' ')).first();
+	if(comment.isUndefined()) {
+		comment="Undefined";
+		}
+	else {
+		comment=comment.substring(6 + name.size(), comment.size());
+		}
+	}
+*/
+
+rule Package 
+	transform e : KM3!Package
+	to c : Ecore1!EPackage {
+			c.name = e.name;
+			c.eClassifiers = e.contents.select(e|e.isKindOf(KM3!Classifier)).equivalent();
+			c.eSubpackages = e.contents.select(e|e.isKindOf(KM3!Package)).equivalent();
+			c.nsURI = e.getMetadata("nsURI");
+			c.nsPrefix = e.getMetadata("nsPrefix");
+		}
+
+
+rule PrimitiveType 
+	transform
+		e : KM3!DataType
+	to
+		c : Ecore1!EDataType {
+			c.name = e.name;
+		}
+
+rule Reference 
+	transform e : KM3!Reference
+	to c : Ecore1!EReference {
+			c.name = e.name;
+			c.eType = e.type.equivalent();
+			//c.lowerBound = e.lower;
+			//c.upperBound = e.upper;
+			//c.ordered = e.isOrdered;
+			//c.eOpposite = e.opposite.equivalent();
+			//c.containment = e.isContainer;
+		}
+		
+
+rule Class 
+	transform e : KM3!Class
+	to
+		c : Ecore1!EClass {
+			c.name = e.name;
+			c.eStructuralFeatures = e.structuralFeatures.equivalent();
+			c.eOperations = e.operations.equivalent();
+			c.eSuperTypes = e.supertypes.equivalent();
+			c.`abstract` = e.isAbstract;
+		}
+
+
+rule PrimitiveAttribute 
+	transform 
+		e : KM3!Attribute 
+	to
+		c : Ecore1!EAttribute {
+
+		guard : e.type.isKindOf(KM3!DataType) or
+				e.type.isKindOf(KM3!Enumeration)
+
+			c.name = e.name;
+			c.eType = e.type.equivalent();
+			c.lowerBound = e.lower;
+			c.upperBound = e.upper;
+			c.ordered = e.isOrdered;
+			c.unique = e.isUnique;
+		}
+
+
+rule NonPrimitiveAttribute 
+	transform 
+		e : KM3!Attribute 
+	to
+		c : Ecore1!EReference {
+		guard : not (e.type.isKindOf(KM3!DataType) or
+				e.type.isKindOf(KM3!Enumeration))
+			c.name = e.name;
+			c.eType = e.type.equivalent();
+			c.lowerBound = e.lower;
+			c.upperBound = e.upper;
+			c.ordered = e.isOrdered;
+			c.containment = true;
+		}
+
+
+rule Enumeration 
+	transform 
+		e : KM3!Enumeration
+	to
+		c : Ecore1!EEnum {
+			c.name = e.name;
+			c.eLiterals = e.literals.equivalent();
+		}
+
+
+rule EnumLiteral 
+	transform 
+		e : KM3!EnumLiteral
+	to
+		c : Ecore1!EEnumLiteral {
+			c.name = e.name;
+			//c.value = e.enum.equivalent().literals.indexOf(e);
+		}
+
+
+rule Operation 
+	transform 
+		io : KM3!Operation
+	to
+		oo : Ecore1!EOperation {
+			oo.name = io.name;
+			oo.eParameters = io.parameters.equivalent();
+			oo.eType = io.type.equivalent();
+		}
+
+
+rule Parameter 
+	transform 
+		ip : KM3!Parameter
+	to
+		op : Ecore1!EParameter {
+			op.name = ip.name;
+			op.eType = ip.type.equivalent();
+		}
+
+
+post {"KM32EMF Transformation ends".println(); }
+
+

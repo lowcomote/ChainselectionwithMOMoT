@@ -1,0 +1,46 @@
+Number of variables: 6
+  Variable[0]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32JavaSource'
+- node #1 => trafochainselection.impl.TransformationChainImpl@d8948cd (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.MetamodelImpl@3e7dfd44 (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@4349754 (id: KM32JavaSource, metrics: null, complexity: 51, coverage: 0.22807017543859648)
+- node #4 => trafochainselection.impl.MetamodelImpl@6b760460 (id: metamodels\JavaSource.ecore)
+
+  Variable[1]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'JavaSource2Table'
+- node #1 => trafochainselection.impl.TransformationChainImpl@d8948cd (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@3b0ee03a (id: JavaSource2Table, metrics: null, complexity: 43, coverage: 0.2857142857142857)
+- node #3 => trafochainselection.impl.MetamodelImpl@6b760460 (id: metamodels\JavaSource.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@796065aa (id: metamodels\Table.ecore)
+
+  Variable[2]: -Placeholder-
+
+  Variable[3]: -Placeholder-
+
+  Variable[4]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table2HTML'
+- node #1 => trafochainselection.impl.TransformationChainImpl@d8948cd (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@1ba05e38 (id: Table2HTML, metrics: null, complexity: 66, coverage: 0.6666666666666666)
+- node #3 => trafochainselection.impl.MetamodelImpl@796065aa (id: metamodels\Table.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@2c306a57 (id: metamodels\HTML.ecore)
+
+  Variable[5]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML2XML'
+- node #1 => trafochainselection.impl.TransformationChainImpl@d8948cd (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@6c298dc (id: HTML2XML, metrics: null, complexity: 74, coverage: 0.15217391304347827)
+- node #3 => trafochainselection.impl.MetamodelImpl@2c306a57 (id: metamodels\HTML.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@28a6301f (id: metamodels\XML.ecore)
+
+Number of attributes: 3
+  AggregatedFitness: 237.54420975843863
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  TransformationCoverage: -0.006610729722857869
+  StructuralFeatures: 234.0
+  InformationLoss: -0.4375
+  GraphSimilarity: -0.011679511838520002
+  SolutionLength: 4.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nsPrefix:JavaSource
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:nsPrefix="http://www.eclipse.org/gmt/2005/JavaSource"
+    xsi:schemaLocation="http://www.eclipse.org/gmt/2005/JavaSource ../metamodels/JavaSource.ecore">
+  <classes name="class1">
+    <methods
+        name="method1">
+      <invocations
+          method="//@classes.0/@methods.1"/>
+    </methods>
+    <methods
+        name="method2"/>
+    <prop name="property1"/>
+  </classes>
+  <classes name="class2">
+    <prop name="prop1"/>
+  </classes>
+</nsPrefix:JavaSource>

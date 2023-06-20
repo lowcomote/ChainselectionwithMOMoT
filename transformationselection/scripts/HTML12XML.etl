@@ -1,0 +1,137 @@
+model HTML1 driver EMF {
+nsuri = "nsUri1"
+};
+
+model XML driver EMF {
+nsuri = "xml.com"
+};
+
+pre {"HTML2XML transformation starts". println();}
+/*
+operation Attribute(attrName : String, attrValue : String)
+	{
+		var at : new XML!Attribute;
+			at.name = attrName;
+			at.value = attrValue;
+	}
+	
+operation Text(value : String)
+	{
+		var text : new XML!Text;
+		text.value = (not value.isUndefined() ? value : '');
+
+	}
+*/
+
+rule HTML 
+	transform
+		html : HTML1!HTML
+	to
+		xml : XML!Root {
+			xml.name = 'html';
+			xml.children = html.head.equivalent();
+			//xml.children = html.body.equivalent();
+		}
+		
+rule HTMLElement 
+	transform
+		html : HTML1!HTMLElement
+	to
+		xml : XML!Element {
+			xml.children = html.children.equivalent();
+		}
+	
+rule HEAD 
+	transform
+		html : HTML1!HEAD 
+	to
+		xml : XML!Element extends HTMLElement {
+			xml.name = 'head';
+			xml.children = html.headElements.equivalent();
+		}
+		
+@abstract 
+rule HEADElement 
+	transform
+		html : HTML1!HEADElement
+	to
+		xml : XML!Element extends HTMLElement {}
+	
+
+
+rule TITLE 
+	transform
+		html : HTML1!TITLE
+	to
+		xml : XML!Element extends HEADElement {
+			xml.name = 'title';
+			xml.children = Text(html.value);
+		}
+		
+rule BODY 
+	transform
+		html : HTML!BODY
+	to
+		xml : XML!Element extends HTMLElement {
+			xml.name = 'body';
+			xml.children = html.bodyElements.equivalent();
+		}
+		
+@abstract 
+rule BODYElement 
+	transform
+		html : HTML1!BODYElement
+	to
+		xml : XML!Element extends HTMLElement {}
+		
+@abstract 
+rule TABLEElement 
+	transform
+		html : HTML1!TABLEElement
+	to
+		xml : XML!Element extends BODYElement {}
+
+	
+rule TABLE 
+	transform
+		html : HTML1!TABLE
+	to
+		xml : XML!Element  extends TABLEElement {
+			xml.name = 'table';
+			xml.children = Attribute('border',
+				((not html.border.isUndefined()) ? html.border : '0'));
+			xml.children = html.trs.equivalent();
+		}
+
+rule TR 
+	transform
+		html : HTML1!TR
+	to
+		xml : XML!Element extends TABLEElement {
+			xml.name = 'tr';
+			xml.children = html.tds.equivalent();
+		}
+
+rule TD 
+	transform
+		html : HTML1!TD
+	to
+		xml : XML!Element extends TABLEElement {		
+			xml.name = 'td';
+			xml.children = Text(html.value);
+		if (not html.align.isUndefined()) {
+			xml.children = Attribute('align', html.align);
+		}
+	}
+	
+rule TH 
+	transform
+		html : HTML1!TH
+	to
+		xml : XML!Element extends TD {
+			xml.name = 'th';
+		}
+	
+
+
+post {"HTML2XML transformation ends". println();}

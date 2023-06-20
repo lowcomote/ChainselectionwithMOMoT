@@ -1,0 +1,32 @@
+model Ecore1 driver EMF {nsuri = "http://www.eclipse.org/emf/2002/Ecore1"};
+model Table1 driver EMF {nsuri = "http://www.eclipse.org/gmt/2005/Table1"};
+
+pre {
+	"Ecore2Table Transformation starts".println();
+}
+
+rule Package2Table
+transform s : Ecore1!EPackage
+to t : Table1!Table
+ {
+	t.rows = s.eClassifiers.equivalent();
+}
+
+rule EClass2Row
+transform s : Ecore1!EClass
+to r : Table1!Row
+ {
+ 	//r.name = s.name;
+	r.cells = s.eSuperTypes.equivalent();
+}
+
+rule Attr2Cell
+transform s : Ecore1!EAttribute
+to t1 : Table1!Cell
+ {
+	t1.content = s.name;
+}
+
+post {
+	"Ecore2Table Transformation end.".println();
+}

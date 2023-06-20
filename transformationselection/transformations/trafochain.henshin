@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<henshin:Module xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:henshin="http://www.eclipse.org/emf/2011/Henshin" xmi:id="_bxsBIBn3EeyyS6hC7Ke7fg" name="transformationModule">
+  <imports href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#/"/>
+  <units xsi:type="henshin:Rule" xmi:id="_dcbEoBn3EeyyS6hC7Ke7fg" name="addTransformation">
+    <parameters xmi:id="_jIwVUBn3EeyyS6hC7Ke7fg" name="transformation">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_dc_sYBn3EeyyS6hC7Ke7fg" name="Lhs">
+      <nodes xmi:id="_nNIJsBn3EeyyS6hC7Ke7fg" outgoing="_2j2bABrGEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain"/>
+      </nodes>
+      <nodes xmi:id="_vVnTwBn3EeyyS6hC7Ke7fg" description="" outgoing="_Osf2ABrHEeybpbM67QtzRA _bAsLgBrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation"/>
+        <attributes xmi:id="_Jg8_QBn4EeyyS6hC7Ke7fg" value="transformation">
+          <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_1bE1EBrGEeybpbM67QtzRA" incoming="_2j2bABrGEeybpbM67QtzRA _bAsLgBrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Metamodel"/>
+      </nodes>
+      <nodes xmi:id="_NGQ4ABrHEeybpbM67QtzRA" incoming="_Osf2ABrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Metamodel"/>
+      </nodes>
+      <edges xmi:id="_2j2bABrGEeybpbM67QtzRA" source="_nNIJsBn3EeyyS6hC7Ke7fg" target="_1bE1EBrGEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/outputMM"/>
+      </edges>
+      <edges xmi:id="_Osf2ABrHEeybpbM67QtzRA" source="_vVnTwBn3EeyyS6hC7Ke7fg" target="_NGQ4ABrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/target"/>
+      </edges>
+      <edges xmi:id="_bAsLgBrHEeybpbM67QtzRA" source="_vVnTwBn3EeyyS6hC7Ke7fg" target="_1bE1EBrGEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/src"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_dc_sYRn3EeyyS6hC7Ke7fg" name="Rhs">
+      <nodes xmi:id="_sWYigBn3EeyyS6hC7Ke7fg" outgoing="_91I4YBn3EeyyS6hC7Ke7fg _PUgRMBrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain"/>
+      </nodes>
+      <nodes xmi:id="_6mAp8Bn3EeyyS6hC7Ke7fg" description="" incoming="_91I4YBn3EeyyS6hC7Ke7fg" outgoing="_Osf2ARrHEeybpbM67QtzRA _bAsykBrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation"/>
+        <attributes xmi:id="_LVW8IBn4EeyyS6hC7Ke7fg" value="transformation">
+          <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_1bE1ERrGEeybpbM67QtzRA" incoming="_bAsykBrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Metamodel"/>
+      </nodes>
+      <nodes xmi:id="_NGQ4ARrHEeybpbM67QtzRA" incoming="_Osf2ARrHEeybpbM67QtzRA _PUgRMBrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Metamodel"/>
+      </nodes>
+      <edges xmi:id="_91I4YBn3EeyyS6hC7Ke7fg" source="_sWYigBn3EeyyS6hC7Ke7fg" target="_6mAp8Bn3EeyyS6hC7Ke7fg">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/uses"/>
+      </edges>
+      <edges xmi:id="_Osf2ARrHEeybpbM67QtzRA" source="_6mAp8Bn3EeyyS6hC7Ke7fg" target="_NGQ4ARrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/target"/>
+      </edges>
+      <edges xmi:id="_PUgRMBrHEeybpbM67QtzRA" source="_sWYigBn3EeyyS6hC7Ke7fg" target="_NGQ4ARrHEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/outputMM"/>
+      </edges>
+      <edges xmi:id="_bAsykBrHEeybpbM67QtzRA" source="_6mAp8Bn3EeyyS6hC7Ke7fg" target="_1bE1ERrGEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/src"/>
+      </edges>
+    </rhs>
+    <mappings xmi:id="_sWYigRn3EeyyS6hC7Ke7fg" origin="_nNIJsBn3EeyyS6hC7Ke7fg" image="_sWYigBn3EeyyS6hC7Ke7fg"/>
+    <mappings xmi:id="_6mAp8Rn3EeyyS6hC7Ke7fg" origin="_vVnTwBn3EeyyS6hC7Ke7fg" image="_6mAp8Bn3EeyyS6hC7Ke7fg"/>
+    <mappings xmi:id="_1bE1EhrGEeybpbM67QtzRA" origin="_1bE1EBrGEeybpbM67QtzRA" image="_1bE1ERrGEeybpbM67QtzRA"/>
+    <mappings xmi:id="_NGRfEBrHEeybpbM67QtzRA" origin="_NGQ4ABrHEeybpbM67QtzRA" image="_NGQ4ARrHEeybpbM67QtzRA"/>
+  </units>
+  <units xsi:type="henshin:Rule" xmi:id="_QszXwBpBEeyCdZty6fUH4A" name="startTransformation">
+    <parameters xmi:id="_k-AL8K4aEe2MTqel_2Fn1Q" name="chain">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <parameters xmi:id="_xxvsABrIEeybpbM67QtzRA" name="transformation">
+      <type xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </parameters>
+    <lhs xmi:id="_Qs1M8BpBEeyCdZty6fUH4A" name="Lhs">
+      <nodes xmi:id="_V6tnEBpBEeyCdZty6fUH4A" outgoing="_Bs08ABpCEeyCdZty6fUH4A">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain"/>
+        <attributes xmi:id="_21OFIK4aEe2MTqel_2Fn1Q" value="chain">
+          <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_W08asBpBEeyCdZty6fUH4A" incoming="_cFiKkBpBEeyCdZty6fUH4A _Bs08ABpCEeyCdZty6fUH4A">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Metamodel"/>
+      </nodes>
+      <nodes xmi:id="_X9hMUBpBEeyCdZty6fUH4A" outgoing="_cFiKkBpBEeyCdZty6fUH4A _c0x0wBrGEeyF7O6k-o6yXA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation"/>
+        <attributes xmi:id="_zjQF4BrIEeybpbM67QtzRA" value="transformation">
+          <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_a8_MsBrGEeyF7O6k-o6yXA" incoming="_c0x0wBrGEeyF7O6k-o6yXA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Metamodel"/>
+      </nodes>
+      <edges xmi:id="_cFiKkBpBEeyCdZty6fUH4A" source="_X9hMUBpBEeyCdZty6fUH4A" target="_W08asBpBEeyCdZty6fUH4A">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/src"/>
+      </edges>
+      <edges xmi:id="_Bs08ABpCEeyCdZty6fUH4A" source="_V6tnEBpBEeyCdZty6fUH4A" target="_W08asBpBEeyCdZty6fUH4A">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/start"/>
+      </edges>
+      <edges xmi:id="_c0x0wBrGEeyF7O6k-o6yXA" source="_X9hMUBpBEeyCdZty6fUH4A" target="_a8_MsBrGEeyF7O6k-o6yXA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/target"/>
+      </edges>
+    </lhs>
+    <rhs xmi:id="_Qs1M8RpBEeyCdZty6fUH4A" name="Rhs">
+      <nodes xmi:id="_V6tnERpBEeyCdZty6fUH4A" outgoing="_aUhf8BpBEeyCdZty6fUH4A _Bs08ARpCEeyCdZty6fUH4A _uIq-cBrGEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain"/>
+        <attributes xmi:id="_21QhYK4aEe2MTqel_2Fn1Q" value="chain">
+          <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_W09BwBpBEeyCdZty6fUH4A" incoming="_cFiKkRpBEeyCdZty6fUH4A _Bs08ARpCEeyCdZty6fUH4A">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Metamodel"/>
+      </nodes>
+      <nodes xmi:id="_X9hMURpBEeyCdZty6fUH4A" incoming="_aUhf8BpBEeyCdZty6fUH4A" outgoing="_cFiKkRpBEeyCdZty6fUH4A _c0x0wRrGEeyF7O6k-o6yXA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation"/>
+        <attributes xmi:id="_zjQF4RrIEeybpbM67QtzRA" value="transformation">
+          <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/id"/>
+        </attributes>
+      </nodes>
+      <nodes xmi:id="_a8_zwBrGEeyF7O6k-o6yXA" incoming="_c0x0wRrGEeyF7O6k-o6yXA _uIq-cBrGEeybpbM67QtzRA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Metamodel"/>
+      </nodes>
+      <edges xmi:id="_aUhf8BpBEeyCdZty6fUH4A" source="_V6tnERpBEeyCdZty6fUH4A" target="_X9hMURpBEeyCdZty6fUH4A">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/uses"/>
+      </edges>
+      <edges xmi:id="_cFiKkRpBEeyCdZty6fUH4A" source="_X9hMURpBEeyCdZty6fUH4A" target="_W09BwBpBEeyCdZty6fUH4A">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/src"/>
+      </edges>
+      <edges xmi:id="_Bs08ARpCEeyCdZty6fUH4A" source="_V6tnERpBEeyCdZty6fUH4A" target="_W09BwBpBEeyCdZty6fUH4A">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/start"/>
+      </edges>
+      <edges xmi:id="_c0x0wRrGEeyF7O6k-o6yXA" source="_X9hMURpBEeyCdZty6fUH4A" target="_a8_zwBrGEeyF7O6k-o6yXA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//Transformation/target"/>
+      </edges>
+      <edges xmi:id="_uIq-cBrGEeybpbM67QtzRA" source="_V6tnERpBEeyCdZty6fUH4A" target="_a8_zwBrGEeyF7O6k-o6yXA">
+        <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/outputMM"/>
+      </edges>
+    </rhs>
+    <attributeConditions xmi:id="_JIKj8K4OEe2MTqel_2Fn1Q" name="hasNoTransformation" conditionText="ocl:self.transformationchain->select(t | t.id=chain).uses->size()=0"/>
+    <mappings xmi:id="_V6tnEhpBEeyCdZty6fUH4A" origin="_V6tnEBpBEeyCdZty6fUH4A" image="_V6tnERpBEeyCdZty6fUH4A"/>
+    <mappings xmi:id="_W09BwRpBEeyCdZty6fUH4A" origin="_W08asBpBEeyCdZty6fUH4A" image="_W09BwBpBEeyCdZty6fUH4A"/>
+    <mappings xmi:id="_X9hMUhpBEeyCdZty6fUH4A" origin="_X9hMUBpBEeyCdZty6fUH4A" image="_X9hMURpBEeyCdZty6fUH4A"/>
+    <mappings xmi:id="_a8_zwRrGEeyF7O6k-o6yXA" origin="_a8_MsBrGEeyF7O6k-o6yXA" image="_a8_zwBrGEeyF7O6k-o6yXA"/>
+  </units>
+</henshin:Module>

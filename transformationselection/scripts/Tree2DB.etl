@@ -1,0 +1,15 @@
+model Tree driver EMF {
+nsuri = "TreeDsl"
+};
+
+model DB driver EMF {
+nsuri = "DB"
+};
+
+pre {"Tree2DB transformation starts".println();}
+
+rule Tree2Node
+	transform t:Tree!Tree
+	to d:DB!Database {
+		d.contents := t.label;
+}

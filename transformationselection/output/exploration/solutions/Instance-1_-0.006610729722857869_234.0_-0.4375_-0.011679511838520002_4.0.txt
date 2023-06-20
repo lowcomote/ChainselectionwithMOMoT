@@ -1,0 +1,23 @@
+Number of variables: 4
+  Variable[0]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32JavaSource'
+
+  Variable[1]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'JavaSource2Table'
+
+  Variable[2]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table2HTML'
+
+  Variable[3]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML2XML'
+
+Number of attributes: 0
+Number of objectives: 5
+  Tr. Coverage: -0.006610729722857869
+  Tr. Complexity: 234.0
+  Model Coverage.: -0.4375
+  MM similarity: -0.011679511838520002
+  SolutionLength: 4.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

@@ -1,0 +1,45 @@
+Number of variables: 8
+  Variable[0]: -Placeholder-
+
+  Variable[1]: -Placeholder-
+
+  Variable[2]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32Table'
+- node #1 => trafochainselection.impl.TransformationChainImpl@74c997b1 (id: chain1)
+- node #2 => trafochainselection.impl.MetamodelImpl@2f59ecf (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@1170d81f (id: KM32Table, coverage: 0.15789473684210525, complexity: 20)
+- node #4 => trafochainselection.impl.MetamodelImpl@573f95b2 (id: metamodels\Table.ecore)
+
+  Variable[3]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table2HTML1'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@74c997b1 (id: chain1)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@79c48ad5 (id: Table2HTML1, coverage: 0.6666666666666666, complexity: 60)
+- node #3 => trafochainselection.impl.MetamodelImpl@573f95b2 (id: metamodels\Table.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@134b9d9c (id: metamodels\HTML1.ecore)
+
+  Variable[4]: -Placeholder-
+
+  Variable[5]: -Placeholder-
+
+  Variable[6]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML12XML'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@74c997b1 (id: chain1)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@120bb5b5 (id: HTML12XML, coverage: 0.14782608695652175, complexity: 68)
+- node #3 => trafochainselection.impl.MetamodelImpl@134b9d9c (id: metamodels\HTML1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@484f7fad (id: metamodels\XML.ecore)
+
+  Variable[7]: -Placeholder-
+
+Number of attributes: 3
+  AggregatedFitness: 149.5308356987608
+  rank: 0
+  crowdingDistance: 1.4884365068258676
+Number of objectives: 5
+  TransformationCoverage: -1.0
+  StructuralFeatures: 148.0
+  InformationLoss: -0.4375
+  GraphSimilarity: -0.0316643012392
+  SolutionLength: 3.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

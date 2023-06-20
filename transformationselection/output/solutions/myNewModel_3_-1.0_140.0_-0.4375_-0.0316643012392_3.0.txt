@@ -1,0 +1,45 @@
+Number of variables: 8
+  Variable[0]: -Placeholder-
+
+  Variable[1]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32Table1'
+- node #1 => trafochainselection.impl.TransformationChainImpl@fb37bc5 (id: chain1)
+- node #2 => trafochainselection.impl.MetamodelImpl@735392d6 (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@36f50436 (id: KM32Table1, coverage: 0.15789473684210525, complexity: 16)
+- node #4 => trafochainselection.impl.MetamodelImpl@23d47f7 (id: metamodels\Table1.ecore)
+
+  Variable[2]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table12HTML1'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@fb37bc5 (id: chain1)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@4132d51d (id: Table12HTML1, coverage: 0.6666666666666666, complexity: 56)
+- node #3 => trafochainselection.impl.MetamodelImpl@23d47f7 (id: metamodels\Table1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@4a341849 (id: metamodels\HTML1.ecore)
+
+  Variable[3]: -Placeholder-
+
+  Variable[4]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML12XML'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@fb37bc5 (id: chain1)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@25c253ff (id: HTML12XML, coverage: 0.14782608695652175, complexity: 68)
+- node #3 => trafochainselection.impl.MetamodelImpl@4a341849 (id: metamodels\HTML1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@797626e7 (id: metamodels\XML.ecore)
+
+  Variable[5]: -Placeholder-
+
+  Variable[6]: -Placeholder-
+
+  Variable[7]: -Placeholder-
+
+Number of attributes: 3
+  AggregatedFitness: 141.5308356987608
+  rank: 0
+  crowdingDistance: 0.9884365068258676
+Number of objectives: 5
+  TransformationCoverage: -1.0
+  StructuralFeatures: 140.0
+  InformationLoss: -0.4375
+  GraphSimilarity: -0.0316643012392
+  SolutionLength: 3.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

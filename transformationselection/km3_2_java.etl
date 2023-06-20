@@ -1,0 +1,53 @@
+model KM3 driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/KM3"
+};
+
+model JavaSource driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/JavaSource"
+};
+
+pre {"KM32JavaSource Transformation starting". println();}
+
+rule Package2Package
+	transform s : KM3!Package
+	to t : JavaSource!JavaSource {
+		t.classes = s.contents.equivalents().flatten();	
+}
+
+rule Class2Class
+	transform s:KM3!Class
+	to t: JavaSource!ClassDeclaration {
+	t.name = s.name;
+	//for(sp in s.supertypes){t.superclass ::= sp;}
+	t.superclass = s.supertypes.equivalent().first();
+	t.prop = s.structuralFeatures.equivalent().equivalent();
+}
+
+rule PrimitiveAttribute 
+	transform
+		e : KM3!Attribute
+	to
+		c : JavaSource!Property, t1:JavaSource!MethodDefinition, t2:JavaSource!MethodDefinition {
+			guard :
+			e.type.isKindOf(KM3!DataType) or
+			e.type.isKindOf(KM3!Enumeration)
+			
+			c.name = e.name;
+			
+			t1.class = e.owner.equivalent();
+			t1.name = 'set'+e.name.firstToUpperCase();
+			
+			t2.class = e.owner.equivalent();
+			t2.name = 'get'+e.name.firstToUpperCase();
+}
+		
+
+rule Reference
+	transform
+		e : KM3!Reference
+	to
+		c : JavaSource!Property {
+			c.name = e.name;
+}
+
+post { "KM32JavaSource Transformation ends.". println();}

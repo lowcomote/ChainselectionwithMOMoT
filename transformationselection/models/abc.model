@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<abc:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:abc="http://abc" xmi:id="_X5MH4DXKEeyGYoTU0xVrwg">
+  <as xmi:id="_Y6zV4DXKEeyGYoTU0xVrwg" a="an A" bs="_ZXbAcDXKEeyGYoTU0xVrwg" cs="_aCyRoDXKEeyGYoTU0xVrwg"/>
+  <bs xmi:id="_ZXbAcDXKEeyGYoTU0xVrwg" b="a B"/>
+  <cs xmi:id="_aCyRoDXKEeyGYoTU0xVrwg" c="a C"/>
+</abc:Root>

@@ -1,0 +1,27 @@
+model DEF driver EMF {
+nsuri = "http://def"
+};
+
+model GH driver EMF {
+nsuri = "http://gh"
+};
+
+pre {"T3 executed".println();}
+
+rule Root3
+	transform s : DEF!Root
+	to t : GH!Root {
+	t.gs ::= s.ds;
+	t.hs ::= s.es;
+	
+}
+
+rule D2G
+transform s:DEF!D
+to t:GH!G, t1: GH!H, t2: GH!H{
+	t.g = "element created from "+ s.d;
+	t1.h = "element created from "+ s.d;
+	t2.h = "element created from"+ s.d;
+	t.hs ::= t1;
+}
+

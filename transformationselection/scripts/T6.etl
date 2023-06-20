@@ -1,0 +1,43 @@
+model DEF driver EMF {
+nsuri = "http://def"
+};
+
+model I driver EMF {
+nsuri = "http://I"
+};
+
+pre {"T6 executed".println();}
+
+rule Root3Root
+	transform s : DEF!Root
+	to t : I!Root {
+	t.is := s.ds;
+	//t.is := s.es;
+	//t.is ::= e.fs;
+}
+/*
+rule D2Root
+	transform s : DEF!D
+	to t : I!Root {
+	t.i:=s.ds;
+	t.is:=s.es;
+	//t.i:=s.fs;
+	}
+
+	
+rule E2I
+	transform s : DEF!E
+	to t : I!Root {
+	t.i=s.e;
+	}
+	
+rule F2I
+transform s : DEF!F
+to t : I!Root {
+t.i=s.f;
+}
+*/
+
+
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trafochainselection:TransformationModel
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:trafochainselection="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0"
+    xsi:schemaLocation="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0 ../metamodel/trafochainselection.ecore">
+  <transformationchain
+      id="chain1"
+      start="//@modelTransformationRepository/@metamodels.0"
+      final="//@modelTransformationRepository/@metamodels.2"/>
+  <modelTransformationRepository>
+    <transformations
+        id="KM32EMF"
+        src="//@modelTransformationRepository/@metamodels.0"
+        target="//@modelTransformationRepository/@metamodels.1"/>
+    <transformations
+        id="EMF2Java"
+        src="//@modelTransformationRepository/@metamodels.1"
+        target="//@modelTransformationRepository/@metamodels.2"/>
+    <transformations
+        id="km3_2_java"
+        src="//@modelTransformationRepository/@metamodels.0"
+        target="//@modelTransformationRepository/@metamodels.2"/>
+    <metamodels
+        id="metamodels/KM3.ecore"/>
+    <metamodels
+        id="metamodels/Ecore.ecore"/>
+    <metamodels
+        id="metamodels/JavaSource.ecore"/>
+  </modelTransformationRepository>
+</trafochainselection:TransformationModel>

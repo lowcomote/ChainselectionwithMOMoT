@@ -1,0 +1,37 @@
+model ABC driver EMF {
+nsuri = "http://abc"
+};
+
+model DEF driver EMF {
+nsuri = "http://def"
+};
+
+pre {"T2 executed".println();}
+
+rule Root2
+	transform s : ABC!Root
+	to t : DEF!Root {
+	t.ds ::= s.as;
+	t.es ::= s.bs;
+	t.fs ::= s.cs;
+}
+
+rule A2D
+transform s: ABC!A
+to t: DEF!D{
+	t.d = "element created from "+ s.a;
+} 
+
+rule B2E
+transform s: ABC!B
+to t: DEF!E{
+	t.e = "element created from "+ s.b;
+}
+
+rule C2F
+transform s: ABC!C
+to t: DEF!F{
+	t.f = "element created from "+ s.c;
+}
+
+

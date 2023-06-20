@@ -1,0 +1,31 @@
+model I driver EMF {
+nsuri = "http://I"
+};
+
+model GH driver EMF {
+nsuri = "http://gh"
+};
+
+pre {"T7 executed".println();}
+
+rule Root3Root
+	transform s : I!Root
+	to t : GH!Root {
+	//t.gs := s.is;
+	//t.hs := s.is;
+	t.g := s.i;
+}
+
+/*
+rule G2I
+transform s:I!Root
+to t:GH!G {
+	t.g=s.i;
+}
+
+rule H2I
+transform s:I!Root
+to t:GH!H {
+	t.h=s.i;
+}
+*/

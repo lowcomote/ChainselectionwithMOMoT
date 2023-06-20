@@ -1,0 +1,36 @@
+Number of variables: 6
+  Variable[0]: -Placeholder-
+
+  Variable[1]: -Placeholder-
+
+  Variable[2]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32JavaSource'
+- node #1 => trafochainselection.impl.TransformationChainImpl@6ab4ba9f (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.MetamodelImpl@aaee2a2 (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@2c768ada (id: KM32JavaSource, metrics: null, complexity: 51, coverage: 0.22807017543859648)
+- node #4 => trafochainselection.impl.MetamodelImpl@4aaae508 (id: metamodels\JavaSource.ecore)
+
+  Variable[3]: -Placeholder-
+
+  Variable[4]: -Placeholder-
+
+  Variable[5]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'JavaSource2XML'
+- node #1 => trafochainselection.impl.TransformationChainImpl@6ab4ba9f (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@5d5b5fa7 (id: JavaSource2XML, metrics: null, complexity: 13, coverage: 0.2857142857142857)
+- node #3 => trafochainselection.impl.MetamodelImpl@4aaae508 (id: metamodels\JavaSource.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@7bc6d27a (id: metamodels\XML.ecore)
+
+Number of attributes: 3
+  AggregatedFitness: 65.61432076873183
+  rank: 0
+  crowdingDistance: 2.3668457616835026
+Number of objectives: 5
+  TransformationCoverage: -0.06516290726817042
+  StructuralFeatures: 64.0
+  InformationLoss: -0.3125
+  GraphSimilarity: -0.008016324
+  SolutionLength: 2.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

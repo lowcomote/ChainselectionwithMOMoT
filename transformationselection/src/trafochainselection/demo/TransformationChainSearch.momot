@@ -1,0 +1,89 @@
+package momot.^search
+
+import at.ac.tuwien.big.momot.^search.^fitness.dimension.TransformationLengthDimension
+import at.ac.tuwien.big.moea.^experiment.executor.listener.SeedRuntimePrintListener
+import trafochainselection.TransformationModel
+import trafochainselection.TrafochainselectionPackage
+import trafochainselection.demo.FitnessCalculator
+import trafochainselection.demo.TransformationChainModelGenerator
+
+initialization = {
+//	double start = System.currentTimeMillis();
+//	System.out.println(System.currentTimeMillis());
+	TrafochainselectionPackage.eINSTANCE.eClass
+	System.out.println("Search started.");
+	//TransformationChainModelGenerator.main(null);
+}
+
+search = {
+	model          = {
+		file       = "problem/Instance-1.xmi"
+	}
+	solutionLength  = 15
+	transformations = {
+		modules = [ "transformations/trafochain.henshin" ]
+		 ignoreUnits = [
+      		"trafochain::transformationModule::addTransformation",
+      		"trafochain::transformationModule::checkHasTransformation",
+      		"trafochain::transformationModule::removeTransformation",
+      		"trafochain::transformationModule::startTransformation"
+    	]
+	}
+	fitness         = {
+		objectives = {
+			TransformationCoverage : maximize { FitnessCalculator.calculateTransformationCoverage_new1(root as TransformationModel)  }
+			StructuralFeatures : minimize { FitnessCalculator.calculateStructuralFeatures1(root as TransformationModel)  }
+			InformationLoss : maximize {FitnessCalculator.calculateModelCoverage(root as TransformationModel) }
+			GraphSimilarity : maximize {FitnessCalculator.calculateGraphSimilarityChain(root as TransformationModel) }
+			SolutionLength : minimize new TransformationLengthDimension			
+			
+		}
+		constraints = {
+			chainEndsInTargetMM : minimize {
+				FitnessCalculator.calculateChainValidity(root as TransformationModel)
+			}
+		}
+	}
+	algorithms      = {
+		Random  : moea.createRandomSearch()
+		NSGAII  : moea.createNSGAII()
+		NSGAIII : moea.createNSGAIII()
+		EpsilonMOEA : moea.createEpsilonMOEA()
+	}
+}
+
+experiment = {
+	populationSize    = 11
+	maxEvaluations    = 110
+	nrRuns            =5
+	progressListeners = [ new SeedRuntimePrintListener ]
+}
+
+analysis = {
+	indicators       = [ hypervolume generationalDistance ]
+	significance     = 0.01
+	show             = [ aggregateValues statisticalSignificance individualValues ]
+	outputFile       = "output/analysis/analysis.txt"
+	boxplotDirectory = "output/analysis/"
+	printOutput
+}
+
+results = {
+	objectives = {
+		outputFile      = "output/objectives/objective_values.txt"
+		printOutput
+	}
+
+	solutions  = {
+		outputFile      = "output/solutions/objective_values.txt"
+		outputDirectory = "output/solutions/"
+	}
+
+	models     = {
+		outputDirectory = "output/models/"
+	}
+}
+
+finalization = {
+	System.out.println("Search finished.");
+}

@@ -1,0 +1,29 @@
+Number of variables: 6
+  Variable[0]: -Placeholder-
+
+  Variable[1]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32Table'
+
+  Variable[2]: -Placeholder-
+
+  Variable[3]: -Placeholder-
+
+  Variable[4]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table2HTML'
+
+  Variable[5]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML2XML'
+
+Number of attributes: 3
+  AggregatedFitness: 162.51481739212463
+  rank: 0
+  crowdingDistance: 1.505132759813775
+Number of objectives: 5
+  TransformationCoverage: -0.016018306636155607
+  StructuralFeatures: 160.0
+  InformationLoss: -0.4375
+  GraphSimilarity: -0.0316643012392
+  SolutionLength: 3.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

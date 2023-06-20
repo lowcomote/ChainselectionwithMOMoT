@@ -1,0 +1,45 @@
+Number of variables: 8
+  Variable[0]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32JavaSource1'
+- node #1 => trafochainselection.impl.TransformationChainImpl@10b87e8e (id: chain1)
+- node #2 => trafochainselection.impl.MetamodelImpl@2196a4d (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@cec85b9 (id: KM32JavaSource1, coverage: 0.22807017543859648, complexity: 41)
+- node #4 => trafochainselection.impl.MetamodelImpl@1b0d0f76 (id: metamodels\JavaSource1.ecore)
+
+  Variable[1]: -Placeholder-
+
+  Variable[2]: -Placeholder-
+
+  Variable[3]: -Placeholder-
+
+  Variable[4]: -Placeholder-
+
+  Variable[5]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'JavaSource12HTML1'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@10b87e8e (id: chain1)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@78cd456a (id: JavaSource12HTML1, coverage: 0.19047619047619047, complexity: 15)
+- node #3 => trafochainselection.impl.MetamodelImpl@1b0d0f76 (id: metamodels\JavaSource1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@59933500 (id: metamodels\HTML1.ecore)
+
+  Variable[6]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML12XML'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@10b87e8e (id: chain1)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@3284c7bf (id: HTML12XML, coverage: 0.14782608695652175, complexity: 68)
+- node #3 => trafochainselection.impl.MetamodelImpl@59933500 (id: metamodels\HTML1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@388af49e (id: metamodels\XML.ecore)
+
+  Variable[7]: -Placeholder-
+
+Number of attributes: 3
+  AggregatedFitness: 125.5581838768748
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  TransformationCoverage: -1.0
+  StructuralFeatures: 124.0
+  InformationLoss: -0.4375
+  GraphSimilarity: -0.0043161231252
+  SolutionLength: 3.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

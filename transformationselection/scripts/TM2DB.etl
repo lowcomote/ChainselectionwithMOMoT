@@ -1,0 +1,23 @@
+model TM driver EMF {
+nsuri = "TM"
+};
+
+model DB driver EMF {
+nsuri = "DB"
+};
+
+//corner case of using target in Typemapping
+operation helloWorld(a : TM!TypeMapping) 
+{var b=a.target; b.println();}
+
+rule TypeMapping2Database
+	transform t:TM!TypeMapping
+	to d:DB!Table {
+	 d.name=t.source;
+	// d.name=t.map.toString();
+	 helloWorld(t);
+	}
+
+post { 
+	"TM2DB transformation finished.".println(); 
+}

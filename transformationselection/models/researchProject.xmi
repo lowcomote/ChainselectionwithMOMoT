@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<researchProject:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:researchProject="http://www.example.org/researchProject">
+  <wps title="WP_A">
+    <deliverables title="D1" number="1" due="24"/>
+    <deliverables title="D2" number="2" due="30"/>
+    <deliverables title="D3" number="4" due="36"/>
+  </wps>
+  <wps title="WP_B">
+    <deliverables title="D4" number="4" due="20"/>
+    <deliverables title="D5" number="5" due="23"/>
+  </wps>
+</researchProject:Project>

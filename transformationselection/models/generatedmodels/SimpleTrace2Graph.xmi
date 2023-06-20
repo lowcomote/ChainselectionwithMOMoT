@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SimpleTrace="SimpleTrace" xsi:schemaLocation="SimpleTrace src\org\eclipse\epsilon\examples\staticanalyser\metamodels\SimpleTrace.ecore">
+  <SimpleTrace:TraceLink description="NewTree1">
+    <targets href="../Tree2.xmi#//@children.0"/>
+    <targets href="../Tree2.xmi#//@children.1"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink sources="/0" description="NewChild1">
+    <targets href="../Tree2.xmi#//@children.0/@children.0"/>
+    <targets href="../Tree2.xmi#//@children.0/@children.1"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink sources="/1" description="NewGrandChild1"/>
+  <SimpleTrace:TraceLink sources="/1" description="NewGrandChild2"/>
+  <SimpleTrace:TraceLink sources="/0" description="NewChild2">
+    <targets href="../Tree2.xmi#//@children.1/@children.0"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink sources="/4" description="NewGrandChild3"/>
+</xmi:XMI>

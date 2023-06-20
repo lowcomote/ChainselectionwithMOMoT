@@ -1,0 +1,45 @@
+Number of variables: 8
+  Variable[0]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32JavaSource'
+- node #1 => trafochainselection.impl.TransformationChainImpl@1d8e0cfc (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.MetamodelImpl@6ecd41c4 (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@a9a9fd6 (id: KM32JavaSource, metrics: null, complexity: 51, coverage: 0.22807017543859648)
+- node #4 => trafochainselection.impl.MetamodelImpl@3a0975a1 (id: metamodels\JavaSource.ecore)
+
+  Variable[1]: -Placeholder-
+
+  Variable[2]: -Placeholder-
+
+  Variable[3]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'JavaSource2Table1'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@1d8e0cfc (id: chain1, inputModel: null)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@3f5bb066 (id: JavaSource2Table1, metrics: null, complexity: 37, coverage: 0.2857142857142857)
+- node #3 => trafochainselection.impl.MetamodelImpl@3a0975a1 (id: metamodels\JavaSource.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@5ae4a579 (id: metamodels\Table1.ecore)
+
+  Variable[4]: -Placeholder-
+
+  Variable[5]: -Placeholder-
+
+  Variable[6]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table12XML'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@1d8e0cfc (id: chain1, inputModel: null)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@670fbc4d (id: Table12XML, metrics: null, complexity: 17, coverage: 0.75)
+- node #3 => trafochainselection.impl.MetamodelImpl@5ae4a579 (id: metamodels\Table1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@126f9098 (id: metamodels\XML.ecore)
+
+  Variable[7]: -Placeholder-
+
+Number of attributes: 3
+  AggregatedFitness: 107.73343944204888
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  TransformationCoverage: -0.04887218045112782
+  StructuralFeatures: 105.0
+  InformationLoss: -0.1875
+  GraphSimilarity: -0.030188377500000002
+  SolutionLength: 3.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

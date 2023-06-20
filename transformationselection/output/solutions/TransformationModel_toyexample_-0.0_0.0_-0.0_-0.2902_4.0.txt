@@ -1,0 +1,46 @@
+Number of variables: 6
+  Variable[0]: -Placeholder-
+
+  Variable[1]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain'
+- parameter 'transformation' => 'KM32JAVA'
+- node #1 => trafochainselection.impl.TransformationChainImpl@4b54af3d (id: chain, inputModel: null)
+- node #2 => trafochainselection.impl.MetamodelImpl@10667848 (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@1a28aef1 (id: KM32JAVA, metrics: null, complexity: 0, coverage: 0.0)
+- node #4 => trafochainselection.impl.MetamodelImpl@77c7ed8e (id: metamodels\JavaSource.ecore)
+
+  Variable[2]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'JAVA2TABLE'
+- node #1 => trafochainselection.impl.TransformationChainImpl@4b54af3d (id: chain, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@4647881c (id: JAVA2TABLE, metrics: null, complexity: 0, coverage: 0.0)
+- node #3 => trafochainselection.impl.MetamodelImpl@77c7ed8e (id: metamodels\JavaSource.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@2c6ee758 (id: metamodels\Table.ecore)
+
+  Variable[3]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'TABLE2HTML'
+- node #1 => trafochainselection.impl.TransformationChainImpl@4b54af3d (id: chain, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@6e0cff20 (id: TABLE2HTML, metrics: null, complexity: 0, coverage: 0.0)
+- node #3 => trafochainselection.impl.MetamodelImpl@2c6ee758 (id: metamodels\Table.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@66bacdbc (id: metamodels\HTML.ecore)
+
+  Variable[4]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML2XML'
+- node #1 => trafochainselection.impl.TransformationChainImpl@4b54af3d (id: chain, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@359b650b (id: HTML2XML, metrics: null, complexity: 0, coverage: 0.0)
+- node #3 => trafochainselection.impl.MetamodelImpl@66bacdbc (id: metamodels\HTML.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@453d496b (id: metamodels\XML.ecore)
+
+  Variable[5]: -Placeholder-
+
+Number of attributes: 3
+  AggregatedFitness: 3.7098
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  TransformationCoverage: -0.0
+  StructuralFeatures: 0.0
+  InformationLoss: -0.0
+  GraphSimilarity: -0.2902
+  SolutionLength: 4.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

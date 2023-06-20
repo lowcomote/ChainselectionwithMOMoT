@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<trafochainselection:TransformationModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:trafochainselection="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0">
+  <transformationchain id="chain1" start="//@modelTransformationRepository/@metamodels.0" final="//@modelTransformationRepository/@metamodels.4" uses="//@modelTransformationRepository/@transformations.1 //@modelTransformationRepository/@transformations.4 //@modelTransformationRepository/@transformations.5 //@modelTransformationRepository/@transformations.6" outputMM="//@modelTransformationRepository/@metamodels.4"/>
+  <modelTransformationRepository>
+    <transformations id="KM32Ecore" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.1" complexity="182" coverage="0.5789473684210527"/>
+    <transformations id="KM32JavaSource" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.2" complexity="51" coverage="0.22807017543859648"/>
+    <transformations id="KM32XML" src="//@modelTransformationRepository/@metamodels.0" target="//@modelTransformationRepository/@metamodels.4" complexity="247" coverage="0.49122807017543857"/>
+    <transformations id="Ecore2JavaSource" src="//@modelTransformationRepository/@metamodels.1" target="//@modelTransformationRepository/@metamodels.2" complexity="76" coverage="0.096"/>
+    <transformations id="JavaSource2Table" src="//@modelTransformationRepository/@metamodels.2" target="//@modelTransformationRepository/@metamodels.3" complexity="43" coverage="0.2857142857142857"/>
+    <transformations id="Table2HTML" src="//@modelTransformationRepository/@metamodels.3" target="//@modelTransformationRepository/@metamodels.5" complexity="66" coverage="0.6666666666666666"/>
+    <transformations id="HTML2XML" src="//@modelTransformationRepository/@metamodels.5" target="//@modelTransformationRepository/@metamodels.4" complexity="74" coverage="0.15217391304347827"/>
+    <metamodels id="metamodels\KM3.ecore"/>
+    <metamodels id="metamodels\Ecore.ecore"/>
+    <metamodels id="metamodels\JavaSource.ecore"/>
+    <metamodels id="metamodels\Table.ecore"/>
+    <metamodels id="metamodels\XML.ecore"/>
+    <metamodels id="metamodels\HTML.ecore"/>
+  </modelTransformationRepository>
+</trafochainselection:TransformationModel>

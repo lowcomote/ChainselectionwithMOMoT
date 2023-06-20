@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:km3="http://www.eclipse.org/gmt/2005/KM3" xmlns:nsPrefix="http://www.eclipse.org/gmt/2005/JavaSource" xsi:schemaLocation="http://www.eclipse.org/gmt/2005/KM3 metamodels/KM3.ecore http://www.eclipse.org/gmt/2005/JavaSource metamodels/JavaSource.ecore">
+  <nsPrefix:JavaSource>
+    <classes xsi:type="km3:DataType" name="String">
+      <package href="sample-km3.xmi#//@contents.0"/>
+    </classes>
+    <classes xsi:type="km3:Class" name="Graph" isAbstract="true" operations="/1/@classes.1 /1/@classes.3 /1/@classes.5 /1/@classes.7 /1/@classes.9 /1/@classes.11 /1/@classes.13 /1/@classes.15 /1/@classes.17 /1/@classes.19 /1/@classes.21 /1/@classes.23 /1/@classes.25 /1/@classes.27 /1/@classes.29 /1/@classes.31 /1/@classes.33 /1/@classes.35 /1/@classes.37 /1/@classes.39 /1/@classes.41 /1/@classes.43 /1/@classes.45 /1/@classes.47 /1/@classes.49 /1/@classes.51 /1/@classes.53 /1/@classes.55 /1/@classes.57 /1/@classes.59 /1/@classes.61 /1/@classes.63 /1/@classes.65 /1/@classes.67 /1/@classes.69 /1/@classes.71 /1/@classes.73 /1/@classes.75 /1/@classes.77 /1/@classes.79 /1/@classes.81 /1/@classes.83 /1/@classes.85 /1/@classes.87 /1/@classes.89 /1/@classes.91 /1/@classes.93 /1/@classes.95 /1/@classes.97 /1/@classes.99 /1/@classes.101 /1/@classes.103 /1/@classes.105 /1/@classes.107 /1/@classes.109 /1/@classes.111 /1/@classes.113 /1/@classes.115 /1/@classes.117 /1/@classes.119 /1/@classes.121 /1/@classes.123 /1/@classes.125 /1/@classes.127 /1/@classes.129 /1/@classes.131 /1/@classes.133 /1/@classes.135 /1/@classes.137 /1/@classes.139 /1/@classes.141 /1/@classes.143 /1/@classes.145 /1/@classes.147 /1/@classes.149 /1/@classes.151 /1/@classes.153 /1/@classes.155 /1/@classes.157 /1/@classes.159 /1/@classes.161 /1/@classes.163 /1/@classes.165 /1/@classes.167 /1/@classes.169 /1/@classes.171 /1/@classes.173 /1/@classes.175 /1/@classes.177 /1/@classes.179 /1/@classes.181 /1/@classes.183 /1/@classes.185">
+      <package href="sample-km3.xmi#//@contents.0"/>
+    </classes>
+    <classes xsi:type="km3:Class" name="Node" supertypes="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.0"/>
+      <structuralFeatures xsi:type="km3:Attribute" name="name" lower="1" upper="1" type="/0/@classes.0">
+        <package href="sample-km3.xmi#//@contents.0"/>
+      </structuralFeatures>
+    </classes>
+    <classes xsi:type="km3:Class" name="Edge" supertypes="/0/@classes.1" operations="/0/@classes.4 /0/@classes.5">
+      <package href="sample-km3.xmi#//@contents.0"/>
+      <structuralFeatures xsi:type="km3:Attribute" name="name" lower="1" upper="1" type="/0/@classes.0">
+        <package href="sample-km3.xmi#//@contents.0"/>
+      </structuralFeatures>
+      <structuralFeatures xsi:type="km3:Reference" name="sourceNode" lower="1" upper="1" type="/0/@classes.3">
+        <package href="sample-km3.xmi#//@contents.0"/>
+      </structuralFeatures>
+      <structuralFeatures xsi:type="km3:Reference" name="targetNode" lower="1" upper="1" type="/0/@classes.3">
+        <package href="sample-km3.xmi#//@contents.0"/>
+      </structuralFeatures>
+    </classes>
+    <classes xsi:type="km3:Operation" name="getName" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.3" parameters="/1/@classes.0 /1/@classes.2 /1/@classes.4 /1/@classes.6 /1/@classes.8 /1/@classes.10 /1/@classes.12 /1/@classes.14 /1/@classes.16 /1/@classes.18 /1/@classes.20 /1/@classes.22 /1/@classes.24 /1/@classes.26 /1/@classes.28 /1/@classes.30 /1/@classes.32 /1/@classes.34 /1/@classes.36 /1/@classes.38 /1/@classes.40 /1/@classes.42 /1/@classes.44 /1/@classes.46 /1/@classes.48 /1/@classes.50 /1/@classes.52 /1/@classes.54 /1/@classes.56 /1/@classes.58 /1/@classes.60 /1/@classes.62 /1/@classes.64 /1/@classes.66 /1/@classes.68 /1/@classes.70 /1/@classes.72 /1/@classes.74 /1/@classes.76 /1/@classes.78 /1/@classes.80 /1/@classes.82 /1/@classes.84 /1/@classes.86 /1/@classes.88 /1/@classes.90 /1/@classes.92 /1/@classes.94 /1/@classes.96 /1/@classes.98 /1/@classes.100 /1/@classes.102 /1/@classes.104 /1/@classes.106 /1/@classes.108 /1/@classes.110 /1/@classes.112 /1/@classes.114 /1/@classes.116 /1/@classes.118 /1/@classes.120 /1/@classes.122 /1/@classes.124 /1/@classes.126 /1/@classes.128 /1/@classes.130 /1/@classes.132 /1/@classes.134 /1/@classes.136 /1/@classes.138 /1/@classes.140 /1/@classes.142 /1/@classes.144 /1/@classes.146 /1/@classes.148 /1/@classes.150 /1/@classes.152 /1/@classes.154 /1/@classes.156 /1/@classes.158 /1/@classes.160 /1/@classes.162 /1/@classes.164 /1/@classes.166 /1/@classes.168 /1/@classes.170 /1/@classes.172 /1/@classes.174 /1/@classes.176 /1/@classes.178 /1/@classes.180 /1/@classes.182 /1/@classes.184 /1/@classes.186">
+      <package href="sample-km3.xmi#//@contents.0"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="setName" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.3">
+      <package href="sample-km3.xmi#//@contents.0"/>
+    </classes>
+  </nsPrefix:JavaSource>
+  <nsPrefix:JavaSource>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph1()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph1()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph2()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph2()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph3()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph3()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph4()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph4()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph5()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph5()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph6()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph6()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph7()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph7()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph8()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph8()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph9()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph9()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph10()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph10()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph11()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph11()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph12()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph12()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph13()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph13()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph14()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph14()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph15()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph15()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph16()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph16()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph17()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph17()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph18()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph18()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph19()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph19()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph20()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph20()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph21()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph21()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph22()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph22()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph23()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph23()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph24()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph24()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph25()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph25()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph26()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph26()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph27()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph27()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph28()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph28()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph29()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph29()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph30()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph30()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph31()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph31()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph32()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph32()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph33()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph33()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph34()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph34()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph35()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph35()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph36()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph36()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph37()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph37()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph38()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph38()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph39()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph39()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph40()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph40()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph41()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph41()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph42()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph42()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph43()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph43()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph44()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph44()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph45()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph45()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph46()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph46()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph47()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph47()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph48()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph48()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph49()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph49()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph50()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph50()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph51()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph51()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph52()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph52()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph53()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph53()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph54()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph54()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph55()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph55()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph56()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph56()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph57()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph57()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph58()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph58()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph59()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph59()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph60()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph60()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph61()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph61()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph62()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph62()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph63()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph63()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph64()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph64()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph65()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph65()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph66()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph66()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph67()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph67()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph68()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph68()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph69()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph69()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph70()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph70()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph71()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph71()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph72()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph72()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph73()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph73()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph74()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph74()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph75()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph75()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph76()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph76()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph77()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph77()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph78()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph78()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph79()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph79()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph80()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph80()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph81()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph81()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph82()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph82()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph83()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph83()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph84()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph84()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph85()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph85()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph86()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph86()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph87()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph87()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph88()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph88()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph89()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph89()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph90()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph90()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph91()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph91()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph92()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph92()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph93()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Operation" name="operationForGraph93()" lower="1" upper="1" type="/0/@classes.1" owner="/0/@classes.1">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+    <classes xsi:type="km3:Parameter" name="parameterForGraph94()" lower="1" upper="1" type="/0/@classes.0" owner="/0/@classes.4">
+      <package href="sample-km3.xmi#//@contents.1"/>
+    </classes>
+  </nsPrefix:JavaSource>
+  <nsPrefix:ClassDeclaration name="Graph"/>
+  <nsPrefix:ClassDeclaration/>
+  <nsPrefix:ClassDeclaration/>
+  <nsPrefix:Property/>
+  <nsPrefix:MethodDefinition/>
+  <nsPrefix:MethodDefinition/>
+  <nsPrefix:Property/>
+  <nsPrefix:MethodDefinition/>
+  <nsPrefix:MethodDefinition/>
+  <nsPrefix:Property/>
+  <nsPrefix:Property/>
+</xmi:XMI>

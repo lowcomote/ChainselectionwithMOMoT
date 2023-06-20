@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Graph="Graph" xsi:schemaLocation="Graph metamodels/Graph.ecore">
+  <Graph:Node outgoing="/3" label="a"/>
+  <Graph:Node outgoing="/4" incoming="/3" label="b"/>
+  <Graph:Node incoming="/4" label="c"/>
+  <Graph:Edge target="/1" source="/0"/>
+  <Graph:Edge target="/2" source="/1"/>
+</xmi:XMI>

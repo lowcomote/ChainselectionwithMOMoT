@@ -1,0 +1,45 @@
+Number of variables: 8
+  Variable[0]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32JavaSource1'
+- node #1 => trafochainselection.impl.TransformationChainImpl@5f9f5ecc (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.MetamodelImpl@3f14c325 (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@26e629eb (id: KM32JavaSource1, metrics: null, complexity: 41, coverage: 0.22807017543859648)
+- node #4 => trafochainselection.impl.MetamodelImpl@71e8a99b (id: metamodels\JavaSource1.ecore)
+
+  Variable[1]: -Placeholder-
+
+  Variable[2]: -Placeholder-
+
+  Variable[3]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'JavaSource12HTML1'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@5f9f5ecc (id: chain1, inputModel: null)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@c887298 (id: JavaSource12HTML1, metrics: null, complexity: 15, coverage: 0.19047619047619047)
+- node #3 => trafochainselection.impl.MetamodelImpl@71e8a99b (id: metamodels\JavaSource1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@34964c73 (id: metamodels\HTML1.ecore)
+
+  Variable[4]: -Placeholder-
+
+  Variable[5]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML12XML'
+- node 'chain' => trafochainselection.impl.TransformationChainImpl@5f9f5ecc (id: chain1, inputModel: null)
+- node 'trafo' => trafochainselection.impl.TransformationImpl@4d5815a (id: HTML12XML, metrics: null, complexity: 68, coverage: 0.14782608695652175)
+- node #3 => trafochainselection.impl.MetamodelImpl@34964c73 (id: metamodels\HTML1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@5c933b0b (id: metamodels\XML.ecore)
+
+  Variable[6]: -Placeholder-
+
+  Variable[7]: -Placeholder-
+
+Number of attributes: 3
+  AggregatedFitness: 126.55176202514403
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  TransformationCoverage: -0.006421851730776216
+  StructuralFeatures: 124.0
+  InformationLoss: -0.4375
+  GraphSimilarity: -0.0043161231252
+  SolutionLength: 3.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

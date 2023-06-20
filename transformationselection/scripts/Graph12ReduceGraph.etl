@@ -1,0 +1,30 @@
+model Graph1 driver EMF {
+nsuri = "http://graph"
+};
+
+model Graph1 driver EMF {
+nsuri = "http://graph"
+};
+
+pre { "Graph12ReducedGraph transformation starts".println(); }
+
+rule toNode
+	transform inn : Graph1!Node 
+	to out : Graph1!Node {
+		
+		guard : inn.size > 5
+		
+		out.name := inn.name;
+		out.type := inn.type;
+		out.size := inn.size;
+		
+}
+
+
+rule toEdge
+	transform e : Graph1!Edge
+	to out : Graph1!Edge {
+		guard : not e.source.isUndefined() and not e.target.isUndefined() and e.source.size>5 and e.target.size>5	
+		out.source := e.source.equivalent();
+		out.target := e.target.equivalent();
+}

@@ -1,0 +1,41 @@
+Number of variables: 6
+  Variable[0]: Match for rule 'startTransformation':
+- parameter 'chain' => 'chain1'
+- parameter 'transformation' => 'KM32Table1'
+- node #1 => trafochainselection.impl.TransformationChainImpl@56ac5c80 (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.MetamodelImpl@5b498842 (id: metamodels\KM3.ecore)
+- node #3 => trafochainselection.impl.TransformationImpl@784c5ef5 (id: KM32Table1, metrics: null, complexity: 16, coverage: 0.15789473684210525)
+- node #4 => trafochainselection.impl.MetamodelImpl@58a63629 (id: metamodels\Table1.ecore)
+
+  Variable[1]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'Table12HTML1'
+- node #1 => trafochainselection.impl.TransformationChainImpl@56ac5c80 (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@280e8a1a (id: Table12HTML1, metrics: null, complexity: 56, coverage: 0.6666666666666666)
+- node #3 => trafochainselection.impl.MetamodelImpl@58a63629 (id: metamodels\Table1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@7de843ef (id: metamodels\HTML1.ecore)
+
+  Variable[2]: -Placeholder-
+
+  Variable[3]: -Placeholder-
+
+  Variable[4]: -Placeholder-
+
+  Variable[5]: Match for rule 'addTransformation':
+- parameter 'transformation' => 'HTML12XML'
+- node #1 => trafochainselection.impl.TransformationChainImpl@56ac5c80 (id: chain1, inputModel: null)
+- node #2 => trafochainselection.impl.TransformationImpl@11e33bac (id: HTML12XML, metrics: null, complexity: 68, coverage: 0.14782608695652175)
+- node #3 => trafochainselection.impl.MetamodelImpl@7de843ef (id: metamodels\HTML1.ecore)
+- node #4 => trafochainselection.impl.MetamodelImpl@2881ad47 (id: metamodels\XML.ecore)
+
+Number of attributes: 3
+  AggregatedFitness: 142.51527505802852
+  rank: 0
+  crowdingDistance: Infinity
+Number of objectives: 5
+  TransformationCoverage: -0.015560640732265447
+  StructuralFeatures: 140.0
+  InformationLoss: -0.4375
+  GraphSimilarity: -0.0316643012392
+  SolutionLength: 3.0
+Number of constraints: 1
+  chainEndsInTargetMM: 0.0

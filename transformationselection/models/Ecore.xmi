@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore1" xmlns:km3="http://www.eclipse.org/gmt/2005/KM31"
+    xsi:schemaLocation="http://www.eclipse.org/emf/2002/Ecore1 metamodels/Ecore.ecore http://www.eclipse.org/gmt/2005/KM31 metamodels/KM3.ecore">
+  <ecore:EPackage name="Graph Package Content">
+    <eClassifiers xsi:type="km3:DataType" name="String" package="sample-km3.xmi#//@contents.0"/>
+    <eClassifiers xsi:type="km3:Class" name="Graph" package="sample-km3.xmi#//@contents.0"
+        isAbstract="true" operations="#/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1 #/5/@eAnnotations.-1"/>
+    <eClassifiers xsi:type="km3:Class" name="Node" package="sample-km3.xmi#//@contents.0"
+        supertypes="#/0/@eAnnotations.-1"/>
+    <eClassifiers xsi:type="km3:Class" name="Edge" package="sample-km3.xmi#//@contents.0"
+        supertypes="#/0/@eAnnotations.-1" operations="#/7/@eAnnotations.-1 #/7/@eAnnotations.-1"/>
+  </ecore:EPackage>
+  <ecore:EPackage name="Operations"/>
+  <ecore:EDataType name="String"/>
+  <ecore:EReference name="sourceNode" lowerBound="1" upperBound="1" eType="#/7"/>
+  <ecore:EReference name="targetNode" lowerBound="1" upperBound="1" eType="#/7"/>
+  <ecore:EClass name="Graph" abstract="true" eSuperTypes="">
+    <eOperations xsi:type="km3:Operation" name="operationForGraph1()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph2()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph3()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph4()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph5()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph6()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph7()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph8()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph9()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph10()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph11()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph12()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph13()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph14()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph15()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph16()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph17()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph18()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph19()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph20()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph21()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph22()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph23()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph24()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph25()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph26()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph27()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph28()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph29()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph30()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph31()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph32()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph33()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph34()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph35()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph36()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph37()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph38()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph39()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph40()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph41()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph42()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph43()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph44()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph45()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph46()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph47()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph48()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph49()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph50()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph51()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph52()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph53()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph54()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph55()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph56()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph57()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph58()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph59()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph60()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph61()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph62()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph63()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph64()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph65()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph66()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph67()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph68()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph69()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph70()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph71()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph72()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph73()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph74()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph75()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph76()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph77()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph78()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph79()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph80()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph81()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph82()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph83()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph84()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph85()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph86()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph87()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph88()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph89()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph90()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph91()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph92()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="operationForGraph93()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+  </ecore:EClass>
+  <ecore:EClass name="Node" eSuperTypes="#/0/@eAnnotations.-1">
+    <eStructuralFeatures xsi:type="km3:Attribute" name="name" package="sample-km3.xmi#//@contents.0"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1"/>
+  </ecore:EClass>
+  <ecore:EClass name="Edge" eSuperTypes="#/0/@eAnnotations.-1">
+    <eOperations xsi:type="km3:Operation" name="getName" package="sample-km3.xmi#//@contents.0"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"
+        parameters="#/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1 #/10/@eAnnotations.-1"/>
+    <eOperations xsi:type="km3:Operation" name="setName" package="sample-km3.xmi#//@contents.0"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/0/@eAnnotations.-1"/>
+    <eStructuralFeatures xsi:type="km3:Attribute" name="name" package="sample-km3.xmi#//@contents.0"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1"/>
+    <eStructuralFeatures xsi:type="km3:Reference" name="sourceNode" package="sample-km3.xmi#//@contents.0"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1"/>
+    <eStructuralFeatures xsi:type="km3:Reference" name="targetNode" package="sample-km3.xmi#//@contents.0"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1"/>
+  </ecore:EClass>
+  <ecore:EAttribute name="name" lowerBound="1" upperBound="1" eType="#/2"/>
+  <ecore:EAttribute name="name" lowerBound="1" upperBound="1" eType="#/2"/>
+  <ecore:EOperation name="getName" eType="#/2">
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph1()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph2()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph3()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph4()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph5()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph6()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph7()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph8()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph9()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph10()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph11()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph12()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph13()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph14()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph15()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph16()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph17()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph18()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph19()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph20()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph21()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph22()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph23()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph24()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph25()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph26()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph27()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph28()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph29()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph30()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph31()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph32()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph33()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph34()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph35()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph36()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph37()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph38()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph39()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph40()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph41()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph42()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph43()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph44()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph45()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph46()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph47()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph48()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph49()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph50()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph51()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph52()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph53()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph54()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph55()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph56()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph57()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph58()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph59()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph60()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph61()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph62()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph63()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph64()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph65()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph66()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph67()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph68()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph69()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph70()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph71()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph72()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph73()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph74()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph75()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph76()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph77()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph78()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph79()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph80()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph81()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph82()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph83()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph84()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph85()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph86()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph87()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph88()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph89()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph90()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph91()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph92()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph93()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+    <eParameters xsi:type="km3:Parameter" name="parameterForGraph94()" package="sample-km3.xmi#//@contents.1"
+        lower="1" upper="1" type="#/0/@eAnnotations.-1" owner="#/7/@eAnnotations.-1"/>
+  </ecore:EOperation>
+  <ecore:EOperation name="setName" eType="#/2"/>
+  <ecore:EOperation name="operationForGraph1()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph2()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph3()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph4()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph5()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph6()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph7()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph8()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph9()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph10()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph11()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph12()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph13()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph14()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph15()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph16()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph17()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph18()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph19()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph20()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph21()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph22()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph23()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph24()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph25()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph26()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph27()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph28()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph29()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph30()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph31()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph32()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph33()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph34()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph35()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph36()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph37()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph38()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph39()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph40()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph41()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph42()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph43()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph44()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph45()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph46()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph47()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph48()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph49()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph50()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph51()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph52()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph53()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph54()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph55()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph56()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph57()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph58()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph59()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph60()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph61()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph62()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph63()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph64()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph65()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph66()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph67()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph68()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph69()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph70()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph71()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph72()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph73()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph74()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph75()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph76()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph77()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph78()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph79()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph80()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph81()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph82()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph83()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph84()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph85()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph86()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph87()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph88()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph89()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph90()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph91()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph92()" eType="#/5"/>
+  <ecore:EOperation name="operationForGraph93()" eType="#/5"/>
+  <ecore:EParameter name="parameterForGraph1()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph2()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph3()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph4()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph5()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph6()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph7()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph8()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph9()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph10()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph11()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph12()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph13()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph14()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph15()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph16()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph17()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph18()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph19()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph20()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph21()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph22()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph23()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph24()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph25()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph26()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph27()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph28()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph29()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph30()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph31()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph32()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph33()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph34()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph35()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph36()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph37()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph38()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph39()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph40()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph41()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph42()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph43()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph44()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph45()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph46()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph47()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph48()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph49()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph50()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph51()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph52()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph53()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph54()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph55()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph56()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph57()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph58()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph59()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph60()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph61()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph62()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph63()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph64()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph65()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph66()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph67()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph68()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph69()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph70()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph71()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph72()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph73()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph74()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph75()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph76()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph77()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph78()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph79()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph80()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph81()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph82()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph83()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph84()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph85()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph86()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph87()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph88()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph89()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph90()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph91()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph92()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph93()" eType="#/2"/>
+  <ecore:EParameter name="parameterForGraph94()" eType="#/2"/>
+</xmi:XMI>

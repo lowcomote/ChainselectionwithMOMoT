@@ -1,0 +1,129 @@
+model Table driver EMF {nsuri = "http://www.eclipse.org/gmt/2005/Table"};
+model HTML driver EMF {nsuri = "nsUri"};
+pre {
+	"Table2TabularHTML transformation starts".println();
+}
+rule Table2TABLE
+transform table : Table!Table
+to tab : HTML!TABLE
+
+
+ {
+guard : table.rows.size() > 0
+}
+rule Row2TRwithTH
+transform row : Table!Row
+to tr : HTML!TR
+ {
+}
+rule Cell2TH
+transform cell : Table!Cell
+to th : HTML!TH
+ {
+	th.value = cell.value();
+}
+rule Row2TRwithTD
+transform row : Table!Row
+to tr : HTML!TR
+ {
+	tr.tds = row.cells.first().equivalent("Cell2TD");
+	var i : Integer = 0;
+	while (i < row.cells.size()){
+		if (i >= 2) {
+			tr.tds = row.cells.collect(cell|cell.equivalent("Cell2TDRightAlign"));
+		}
+		i = i + 1;
+	}
+}
+rule Cell2TD
+transform cell : Table!Cell
+to td : HTML!TD
+ {
+	td.value = cell.value().println();
+}
+rule Cell2TDRightAlign
+transform cell : Table!Cell
+to td : HTML!TD
+ {
+	td.value = cell.value();
+	td.align = "right";
+}
+post {
+	"Table2TabularHTML transformation ends".println();
+}
+
+operation String isPercentage() : Boolean {
+	if (self.endsWith("%") and not self.startsWith("-")) {
+		var value : String = self.substring(1, self.size() - 1);
+		if (value.isInteger() or value.isReal()) {
+			return (value.asReal() >= 0) and (value.asReal() <= 100);
+		}
+		else {
+			return false;
+		}
+	}
+	else {
+		return false;
+	}
+}
+operation String value() : String {
+	var dot : Integer = self.indexOf(".");
+	if (self.isReal() and (dot > 0)) {
+		if ((self.size() - (dot + 1)) = 1) {
+			if (self.substring(dot + 2, self.size()) = "0") {
+				return self.substring(1, dot);
+			}
+			else {
+				return self;
+			}
+		}
+		else if ((self.size() - (dot + 1)) > 1) {
+			return self.substring(1, dot + 1 + 1);
+		}
+		else {
+			return self;
+		}
+	}
+	else {
+		return self;
+	}
+}
+operation Table!Cell value() : String {
+	if (self.content.isDefined()) {
+		if (self.content.println().isPercentage()) {
+			return self.content.substring(1, self.content.size() - 1).value() + "%";
+		}
+		else {
+			return self.content.value();
+		}
+	}
+}
+operation Table!Cell realValue() : Real {
+	if (self.content.isDefined()) {
+		if (self.content.isPercentage()) {
+			return self.content.substring(1, self.content.size() - 1).asReal() / 100;
+		}
+		else {
+			return self.content.asReal();
+		}
+	}
+}
+operation Any seqWithoutFirst() : Sequence(Any) {
+	self.subSequence(2, self.size());
+}
+operation allValidTables() : Sequence(Table!Table) {
+	Table!Table.allInstances().select(t|t.rows.seqWithoutFirst().forAll(r|r.cells.seqWithoutFirst().forAll(c|(c.content.isInteger() or c.content.isReal() or c.content.isPercentage()))));
+}
+operation Table!Cell valueNotNull() : Boolean {
+	return self.realValue() <> 0;
+}
+operation HTML() {
+	var html : HTML!HTML;
+	html.head = head;
+	html.body = body;
+	var head : HTML!HEAD;
+	head.headElements = title;
+	var title : HTML!TITLE;
+	title.value = "";
+	var body : HTML!BODY;
+}

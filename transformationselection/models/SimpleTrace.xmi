@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SimpleTrace="SimpleTrace" xsi:schemaLocation="SimpleTrace metamodels/SimpleTrace.ecore">
+  <SimpleTrace:TraceLink description="a">
+    <targets href="Tree.xmi#_w_VmAVJKEd2Vx8faA_hRaA"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink sources="/0" description="b">
+    <targets href="Tree.xmi#_w_VmAlJKEd2Vx8faA_hRaA"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink sources="/1" description="c"/>
+</xmi:XMI>

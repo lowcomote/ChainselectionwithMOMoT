@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<abc:Root xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:abc="http://abc">
+  <as a="an"
+      bs="//@bs.0"
+      cs="//@cs.0"/>
+  <bs b="bn"/>
+  <cs c="cn"/>
+</abc:Root>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SimpleTrace="SimpleTrace" xsi:schemaLocation="SimpleTrace src\org\eclipse\epsilon\examples\staticanalyser\metamodels\SimpleTrace.ecore">
+  <SimpleTrace:TraceLink description="NewTree1">
+    <targets href="Graph2Graph.xmi#/6"/>
+    <targets href="Graph2Graph.xmi#/9"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink description="NewChild1">
+    <sources href="Graph2Graph.xmi#/6"/>
+    <targets href="Graph2Graph.xmi#/7"/>
+    <targets href="Graph2Graph.xmi#/8"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink description="NewGrandChild1">
+    <sources href="Graph2Graph.xmi#/7"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink description="NewGrandChild2">
+    <sources href="Graph2Graph.xmi#/8"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink description="NewChild2">
+    <sources href="Graph2Graph.xmi#/9"/>
+    <targets href="Graph2Graph.xmi#/10"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink description="NewGrandChild3">
+    <sources href="Graph2Graph.xmi#/10"/>
+  </SimpleTrace:TraceLink>
+  <SimpleTrace:TraceLink sources="/0" targets="/1"/>
+  <SimpleTrace:TraceLink sources="/1" targets="/2"/>
+  <SimpleTrace:TraceLink sources="/1" targets="/3"/>
+  <SimpleTrace:TraceLink sources="/0" targets="/4"/>
+  <SimpleTrace:TraceLink sources="/4" targets="/5"/>
+</xmi:XMI>
