@@ -9,4 +9,4 @@ This project includes an ecore model and the Henshin rules to find optimal trans
 * Fitness calculation => ./src/trafochainselection/demo
 * Test instances => ./problem
 
-![Metamodel](./metamodel/trafochainselection.png)
+![Metamodel](./transformationselection/metamodel/trafochainselection.png)
