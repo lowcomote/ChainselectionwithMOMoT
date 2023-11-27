@@ -13,66 +13,66 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface TrafochainselectionFactory extends EFactory {
-	/**
+   /**
     * The singleton instance of the factory.
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	TrafochainselectionFactory eINSTANCE = trafochainselection.impl.TrafochainselectionFactoryImpl.init();
+   TrafochainselectionFactory eINSTANCE = trafochainselection.impl.TrafochainselectionFactoryImpl.init();
 
-	/**
+   /**
     * Returns a new object of class '<em>Model Transformation Repository</em>'.
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @return a new object of class '<em>Model Transformation Repository</em>'.
     * @generated
     */
-	ModelTransformationRepository createModelTransformationRepository();
+   ModelTransformationRepository createModelTransformationRepository();
 
-	/**
+   /**
     * Returns a new object of class '<em>Transformation</em>'.
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @return a new object of class '<em>Transformation</em>'.
     * @generated
     */
-	Transformation createTransformation();
+   Transformation createTransformation();
 
-	/**
+   /**
     * Returns a new object of class '<em>Metamodel</em>'.
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @return a new object of class '<em>Metamodel</em>'.
     * @generated
     */
-	Metamodel createMetamodel();
+   Metamodel createMetamodel();
 
-	/**
+   /**
     * Returns a new object of class '<em>Transformation Chain</em>'.
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @return a new object of class '<em>Transformation Chain</em>'.
     * @generated
     */
-	TransformationChain createTransformationChain();
+   TransformationChain createTransformationChain();
 
-	/**
+   /**
     * Returns a new object of class '<em>Transformation Model</em>'.
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @return a new object of class '<em>Transformation Model</em>'.
     * @generated
     */
-	TransformationModel createTransformationModel();
+   TransformationModel createTransformationModel();
 
-	/**
+   /**
     * Returns the package supported by this factory.
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @return the package supported by this factory.
     * @generated
     */
-	TrafochainselectionPackage getTrafochainselectionPackage();
+   TrafochainselectionPackage getTrafochainselectionPackage();
 
 } //TrafochainselectionFactory

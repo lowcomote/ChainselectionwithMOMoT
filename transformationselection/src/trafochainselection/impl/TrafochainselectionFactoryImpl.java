@@ -5,15 +5,12 @@ package trafochainselection.impl;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import trafochainselection.Metamodel;
-import trafochainselection.ModelTransformationRepository;
-import trafochainselection.TrafochainselectionFactory;
-import trafochainselection.TrafochainselectionPackage;
-import trafochainselection.Transformation;
-import trafochainselection.TransformationChain;
-import trafochainselection.TransformationModel;
+
+import trafochainselection.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,17 +19,6 @@ import trafochainselection.TransformationModel;
  * @generated
  */
 public class TrafochainselectionFactoryImpl extends EFactoryImpl implements TrafochainselectionFactory {
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @deprecated
-    * @generated
-    */
-   @Deprecated
-   public static TrafochainselectionPackage getPackage() {
-      return TrafochainselectionPackage.eINSTANCE;
-   }
-
    /**
     * Creates the default factory implementation.
     * <!-- begin-user-doc -->
@@ -86,17 +72,6 @@ public class TrafochainselectionFactoryImpl extends EFactoryImpl implements Traf
     * @generated
     */
    @Override
-   public Metamodel createMetamodel() {
-      MetamodelImpl metamodel = new MetamodelImpl();
-      return metamodel;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
    public ModelTransformationRepository createModelTransformationRepository() {
       ModelTransformationRepositoryImpl modelTransformationRepository = new ModelTransformationRepositoryImpl();
       return modelTransformationRepository;
@@ -111,6 +86,17 @@ public class TrafochainselectionFactoryImpl extends EFactoryImpl implements Traf
    public Transformation createTransformation() {
       TransformationImpl transformation = new TransformationImpl();
       return transformation;
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public Metamodel createMetamodel() {
+      MetamodelImpl metamodel = new MetamodelImpl();
+      return metamodel;
    }
 
    /**
@@ -145,4 +131,15 @@ public class TrafochainselectionFactoryImpl extends EFactoryImpl implements Traf
       return (TrafochainselectionPackage)getEPackage();
    }
 
-} // TrafochainselectionFactoryImpl
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @deprecated
+    * @generated
+    */
+   @Deprecated
+   public static TrafochainselectionPackage getPackage() {
+      return TrafochainselectionPackage.eINSTANCE;
+   }
+
+} //TrafochainselectionFactoryImpl

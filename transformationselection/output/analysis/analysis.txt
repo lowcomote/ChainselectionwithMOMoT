@@ -1,2 +1,0 @@
-NSGAII:
-    Hypervolume: 0.0

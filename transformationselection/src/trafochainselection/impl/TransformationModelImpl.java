@@ -4,11 +4,13 @@ package trafochainselection.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import trafochainselection.ModelTransformationRepository;
 import trafochainselection.TrafochainselectionPackage;
 import trafochainselection.TransformationChain;
@@ -29,7 +31,7 @@ import trafochainselection.TransformationModel;
  * @generated
  */
 public class TransformationModelImpl extends MinimalEObjectImpl.Container implements TransformationModel {
-	/**
+   /**
     * The cached value of the '{@link #getTransformationchain() <em>Transformationchain</em>}' containment reference.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -38,6 +40,7 @@ public class TransformationModelImpl extends MinimalEObjectImpl.Container implem
     * @ordered
     */
    protected TransformationChain transformationchain;
+
    /**
     * The cached value of the '{@link #getModelTransformationRepository() <em>Model Transformation Repository</em>}' containment reference.
     * <!-- begin-user-doc -->
@@ -50,34 +53,34 @@ public class TransformationModelImpl extends MinimalEObjectImpl.Container implem
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	protected TransformationModelImpl() {
+   protected TransformationModelImpl() {
       super();
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	protected EClass eStaticClass() {
+   @Override
+   protected EClass eStaticClass() {
       return TrafochainselectionPackage.Literals.TRANSFORMATION_MODEL;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public TransformationChain getTransformationchain() {
+   @Override
+   public TransformationChain getTransformationchain() {
       return transformationchain;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -94,11 +97,11 @@ public class TransformationModelImpl extends MinimalEObjectImpl.Container implem
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setTransformationchain(TransformationChain newTransformationchain) {
+   @Override
+   public void setTransformationchain(TransformationChain newTransformationchain) {
       if (newTransformationchain != transformationchain) {
          NotificationChain msgs = null;
          if (transformationchain != null)
@@ -112,17 +115,17 @@ public class TransformationModelImpl extends MinimalEObjectImpl.Container implem
          eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION_MODEL__TRANSFORMATIONCHAIN, newTransformationchain, newTransformationchain));
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public ModelTransformationRepository getModelTransformationRepository() {
+   @Override
+   public ModelTransformationRepository getModelTransformationRepository() {
       return modelTransformationRepository;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -139,11 +142,11 @@ public class TransformationModelImpl extends MinimalEObjectImpl.Container implem
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setModelTransformationRepository(ModelTransformationRepository newModelTransformationRepository) {
+   @Override
+   public void setModelTransformationRepository(ModelTransformationRepository newModelTransformationRepository) {
       if (newModelTransformationRepository != modelTransformationRepository) {
          NotificationChain msgs = null;
          if (modelTransformationRepository != null)

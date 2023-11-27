@@ -136,7 +136,7 @@
         <type href="http://momot.big.tuwien.ac.at/examples/trafochainselection/1.0#//TransformationChain/outputMM"/>
       </edges>
     </rhs>
-    <attributeConditions xmi:id="_JIKj8K4OEe2MTqel_2Fn1Q" name="hasNoTransformation" conditionText="ocl:self.transformationchain->select(t | t.id=chain).uses->size()=0"/>
+    <attributeConditions xmi:id="_JIKj8K4OEe2MTqel_2Fn1Q" name="chainIsEmpty" conditionText="ocl:self.transformationchain->select(t | t.id=chain).uses->size()=0"/>
     <mappings xmi:id="_V6tnEhpBEeyCdZty6fUH4A" origin="_V6tnEBpBEeyCdZty6fUH4A" image="_V6tnERpBEeyCdZty6fUH4A"/>
     <mappings xmi:id="_W09BwRpBEeyCdZty6fUH4A" origin="_W08asBpBEeyCdZty6fUH4A" image="_W09BwBpBEeyCdZty6fUH4A"/>
     <mappings xmi:id="_X9hMUhpBEeyCdZty6fUH4A" origin="_X9hMUBpBEeyCdZty6fUH4A" image="_X9hMURpBEeyCdZty6fUH4A"/>

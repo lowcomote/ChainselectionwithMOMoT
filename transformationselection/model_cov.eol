@@ -1,0 +1,64 @@
+var modelsize  := 0;
+var i_weight :=1;
+var a_weight :=1;
+var r_weight :=1;
+var eclass_set : Set;
+var estrf_set : Set;
+var eclass_mm_set : Set;
+var estrf_mm_set = new Set;
+
+for(sf in MM!EStructuralFeature.all) {
+	estrf_mm_set.add(sf.name);
+}
+
+for(c in MM!EClass.all){
+	if(not c.isAbstract) {
+		//c.name.println();
+		eclass_mm_set.add(c.name);
+	}
+	modelsize+=(c.getSize());
+}
+/*("metaclass"+","+"size").println();
+
+"======================".println();
+("model size: "+modelsize).println();
+
+"Model class ".print()+eclass_set.println()+" has size ".print()+eclass_set.size().println();
+"Metamodel class ".print()+eclass_mm_set.println()+" has size ".print()+eclass_mm_set.size().println();
+"Model Structural Feature ".print()+estrf_set.println()+" has size ".print()+estrf_set.size().println();
+"Metamodel Structural Feature ".print()+estrf_mm_set.println()+" has size ".print()+estrf_mm_set.size().println();*/
+((eclass_set.size().asFloat()+0.5*estrf_set.size().asFloat())/(eclass_mm_set.size().asFloat()+0.5*estrf_mm_set.size().asFloat())).print();
+
+operation MM!EClass getSize() : Integer {
+	var size=0;
+	var instances=m.getAllOfType(self.name);
+	var sizesetfeatures=0;
+	for(i in instances){
+		//if(i.isAbstract)
+		for(f in self.eStructuralFeatures){
+			if(f.isDefined()){
+			sizesetfeatures += f.getSize(i);
+			estrf_set.add(f.name);
+			}
+		}
+		
+	}
+	//instances.println();
+	//var eclass_set : Set;
+	size=(instances.size()*i_weight)+sizesetfeatures;
+	if(size>0 and not self.isAbstract and self.isDefined()) {
+	eclass_set.add(self.name);
+	}
+ 	return size;
+}
+
+operation MM!EAttribute getSize(i: Any) : Integer {
+	if(i.eGet(self).isDefined()){
+	return (1 * a_weight);
+	}else{return 0;}
+}
+operation MM!EReference getSize(i: Any) : Integer {
+	//"a".println() + i.println();
+	//"b".println() + self.println();
+	return i.eGet(self).size() * r_weight;
+}

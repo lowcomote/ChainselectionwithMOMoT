@@ -3,15 +3,19 @@
 package trafochainselection.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import trafochainselection.Metamodel;
 import trafochainselection.ModelTransformationRepository;
 import trafochainselection.TrafochainselectionPackage;
@@ -32,7 +36,7 @@ import trafochainselection.Transformation;
  * @generated
  */
 public class ModelTransformationRepositoryImpl extends MinimalEObjectImpl.Container implements ModelTransformationRepository {
-	/**
+   /**
     * The cached value of the '{@link #getTransformations() <em>Transformations</em>}' containment reference list.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -41,6 +45,7 @@ public class ModelTransformationRepositoryImpl extends MinimalEObjectImpl.Contai
     * @ordered
     */
    protected EList<Transformation> transformations;
+
    /**
     * The cached value of the '{@link #getMetamodels() <em>Metamodels</em>}' containment reference list.
     * <!-- begin-user-doc -->
@@ -53,45 +58,43 @@ public class ModelTransformationRepositoryImpl extends MinimalEObjectImpl.Contai
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	protected ModelTransformationRepositoryImpl() {
+   protected ModelTransformationRepositoryImpl() {
       super();
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	protected EClass eStaticClass() {
+   @Override
+   protected EClass eStaticClass() {
       return TrafochainselectionPackage.Literals.MODEL_TRANSFORMATION_REPOSITORY;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Transformation> getTransformations() {
+   @Override
+   public EList<Transformation> getTransformations() {
       if (transformations == null) {
          transformations = new EObjectContainmentEList<Transformation>(Transformation.class, this, TrafochainselectionPackage.MODEL_TRANSFORMATION_REPOSITORY__TRANSFORMATIONS);
       }
       return transformations;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Metamodel> getMetamodels() {
+   @Override
+   public EList<Metamodel> getMetamodels() {
       if (metamodels == null) {
          metamodels = new EObjectContainmentEList<Metamodel>(Metamodel.class, this, TrafochainselectionPackage.MODEL_TRANSFORMATION_REPOSITORY__METAMODELS);
       }

@@ -1,0 +1,58 @@
+model JavaSource driver EMF {nsuri = "http://www.eclipse.org/gmt/2005/JavaSource"};
+model XML driver EMF { nsuri = "xml.com"};
+
+pre {"JavaSource2XML transformation starts". println();}
+
+operation allMethodDefs() : Sequence(JavaSource!MethodDefinition) {
+	//"abc".println();
+	if(JavaSource!ClassDeclaration.isDefined() and JavaSource!MethodDefinition.class.isDefined()) {
+	return JavaSource!MethodDefinition.all.sortBy(e | e.class.name + '_' +  e.name);
+	}
+	else {return null;}
+	
+}
+
+operation JavaSource!MethodDefinition
+computeContent(col : JavaSource!MethodDefinition) : Integer {
+//"def".println();
+if(JavaSource!MethodInvocation.isDefined() and JavaSource!MethodDefinition.isDefined())
+return self.invocations.select(i | i.method.name = col.name
+				and i.method.class.name = col.class.name).size();
+}
+
+rule JavaS2Root
+transform
+	s : JavaSource!JavaSource
+to
+	x : XML!Root {	
+		
+	x.name = 'html';
+	x.children = Sequence{allMethodDefs().collect(e | e.equivalents())}.flatten();
+	
+}
+
+rule MethodDefinition2XMLElement
+transform
+	m : JavaSource!MethodDefinition
+
+to
+	x : XML!Element {
+	//x.children = Sequence{allMethodDefs().collect(md|md.equivalents())}.flatten();
+	
+	if(m.isDefined())
+	x.name = m.class.name + '.' + m.name;	
+		
+}
+/*
+rule DataCells 
+	transform
+		md: JavaSource!MethodDefinition
+	to
+		xml : XML!Element {
+		
+	xml.name = 'th';
+			
+}
+*/
+post {"JavaSource2XML transformation ends". println();}
+

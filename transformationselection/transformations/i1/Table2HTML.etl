@@ -1,0 +1,225 @@
+model Table driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/Table"
+};
+
+model HTML driver EMF {
+nsuri = "nsUri"
+};
+
+pre { "Table2TabularHTML transformation starts". println();}
+
+/*
+operation String isInteger() : Boolean {
+	if (self.split('\\.').size() - 1 = 0)
+	{ var value : String := self.regexReplaceAll('\\d','');
+			(value = '') or (value = '-');
+	}
+		else {false;}
+	}
+
+
+operation String isReal() : Boolean {
+	var dotNb : Integer =
+		self.split('\\.').size() - 1;
+	if (dotNb = 1)
+	{ var value : String = 
+				self.regexReplaceAll('\\.','').regexReplaceAll('\\d','');
+			(value = '') or (value = '-');
+	}
+		else {false;}
+	}
+*/
+
+operation String isPercentage() : Boolean {
+	if (self.endsWith('%') and not self.startsWith('-'))
+		{ var value : String =
+				self.substring(1,self.size() - 1);
+			if (value.isInteger() or value.isReal())
+				{ return (value.asReal()>=0) and (value.asReal() <= 100);}
+				else {return false;}
+		}
+		else {return false;}
+	}
+
+operation String value() : String {
+	var dot : Integer =
+		self.indexOf('.');
+	if (self.isReal() and (dot > 0))
+		{ if ((self.size() - (dot + 1)) = 1)
+				{ if (self.substring(dot + 2,self.size()) = '0')
+						{ return self.substring(1,dot);}
+				  else {return self;}
+				}
+				else if ((self.size() - (dot + 1)) > 1)  //{
+						{ return self.substring(1,dot + 1 + 1);}
+						else {return self;}
+				   //}
+			}
+		else {return self;}
+	}
+//60
+operation Table!Cell value() : String {
+
+	if(self.content.isDefined()) {
+	if(self.content.println().isPercentage()) {
+		return self.content.substring(1,self.content.size()-1).value() + "%";
+		}
+		else {
+		return self.content.value();
+		}
+		}
+	}
+
+operation Table!Cell realValue() : Real {
+
+	if(self.content.isDefined()) {
+	if (self.content.isPercentage())
+		{ return self.content.substring(1,self.content.size() - 1).asReal() / 100;}
+		else {return self.content.asReal();}
+		}
+	}
+
+operation Any seqWithoutFirst() : Sequence<Any> {
+	self.subSequence(2,self.size());
+	}
+
+operation allValidTables() : Sequence(Table!Table) {
+
+	Table!Table.allInstances().select(t|t.rows.seqWithoutFirst().
+			forAll(r|r.cells.seqWithoutFirst().
+				forAll(c|(c.content.isInteger() or c.content.isReal() or
+						c.content.isPercentage()))));
+	}
+
+operation Table!Cell valueNotNull() : Boolean {
+	return self.realValue() <> 0;
+	}
+
+//operation HTML!HTML html() { OclUndefined;}
+//var html : HTML!HTML = "Undefined";
+
+operation HTML() {
+		var html : HTML!HTML;
+			html.head = head;
+			html.body = body;
+		//),
+		var head : HTML!HEAD;
+			head.headElements = title;
+		//),
+		var title : HTML!TITLE;
+			title.value = '';
+		//),
+		var body : HTML!BODY;
+	//do {
+		//thisModule.html = html;
+	//}
+}
+
+
+rule Table2TABLE 
+	transform
+		table : Table!Table 
+	to
+		tab : HTML!TABLE 
+	{
+		guard : table.rows.size() > 0
+			//"1".println();
+			tab.border = '1';  
+			//tab.trs = Row2TRwithTH(table.rows.first());
+			//tab.trs = table.rows.first().equivalents("Row2TRwithTH").flatten();
+			tab.trs = table.rows.first().equivalents("Row2TRwithTH");
+			//tab.trs = table.rows.equivalent().substring(2,table.rows.size()).
+				//collect(row|Row2TRwithTD(row));
+			
+			var i : Integer = 0;
+			while (i < table.rows.size()) {
+ 				 if(i>=2) {
+ 				 tab.trs = table.rows.collect(row|row.equivalent("Row2TRwithTD"));
+ 				 }
+ 				 i = i+1;
+			}
+			
+		//HTML!HTML.body.bodyElements = tab;
+		//html.body.bodyElements = tab;
+		//"2".println();
+	}
+//140
+
+
+@lazy 
+rule Row2TRwithTH 
+	transform
+		row : Table!Row
+	to
+		tr : HTML!TR {
+		//"3".println();
+			//tr.tds = row.cells.collect(cell|row.Cell2TH(cell));
+			tr.tds = row.cells.collect(cell|cell.equivalent("Cell2TH"));
+		//"4".println();
+		}
+
+
+@lazy 
+rule Cell2TH 
+	transform
+		cell : Table!Cell
+	to
+		th : HTML!TH {
+		//"5".println();
+			if(cell.value()!=null)
+				th.value = cell.value();
+			//th.value = "value";
+		//"6".println();
+		}
+
+@lazy 
+rule Row2TRwithTD 
+	transform
+		row : Table!Row
+	to
+		tr : HTML!TR {
+		//"7".println();
+			tr.tds = row.cells.first().equivalent("Cell2TD");
+			//tr.tds = row.cells.subSequence(2,row.cells.size()).collect(cell|Cell2TDRightAlign(cell));
+			//tr.tds = row.cells.substring(2,row.cells.size()).
+				//		collect(cell|cell.equivalent("Cell2TDRightAlign"));
+			
+			var i : Integer = 0;
+			while (i < row.cells.size()) {
+ 				 if(i>=2) {
+ 				 tr.tds = row.cells.collect(cell|cell.equivalent("Cell2TDRightAlign"));
+ 				 }
+ 				 i = i+1;
+			}
+			
+			//"8".println();
+		}
+
+
+@lazy 
+rule Cell2TD 
+	transform
+		cell : Table!Cell
+	to
+		td : HTML!TD {
+		//"9".println();
+			if(cell.value()!=null)
+				td.value = cell.value().println();
+		//"10".println();
+		}
+
+
+@lazy 
+rule Cell2TDRightAlign 
+	transform
+		cell : Table!Cell
+	to
+		td : HTML!TD {
+		//"11".println();
+			if(cell.value()!=null)
+				td.value = cell.value();
+			td.align = 'right';
+		//"12".println();
+		}
+
+post { "Table2TabularHTML transformation ends". println();}

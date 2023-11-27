@@ -13,12 +13,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="src" lowerBound="1" eType="#//Metamodel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
         eType="#//Metamodel"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metrics" transient="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
-      </eGenericType>
-    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="complexity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="coverage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
   </eClassifiers>
@@ -32,7 +26,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//Metamodel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="final" lowerBound="1" eType="#//Metamodel"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uses" upperBound="-1" eType="#//Transformation"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="outputMM" eType="#//Metamodel"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputMM" eType="#//Metamodel"
+        unsettable="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TransformationModel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="transformationchain" eType="#//TransformationChain"

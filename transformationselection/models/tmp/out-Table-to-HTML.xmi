@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="nsUri" xsi:schemaLocation="nsUri metamodels/HTML.ecore#/0">
+  <TABLE border="1">
+    <trs>
+      <tds xsi:type="TH"/>
+    </trs>
+  </TABLE>
+  <TABLE border="1">
+    <trs>
+      <tds xsi:type="TH"/>
+    </trs>
+  </TABLE>
+</xmi:XMI>

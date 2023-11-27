@@ -55,7 +55,7 @@ search = {
 experiment = {
 	populationSize    = 11
 	maxEvaluations    = 110
-	nrRuns            =5
+	nrRuns            = 1
 	progressListeners = [ new SeedRuntimePrintListener ]
 }
 

@@ -3,15 +3,19 @@
 package trafochainselection.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import trafochainselection.Metamodel;
 import trafochainselection.TrafochainselectionPackage;
 import trafochainselection.Transformation;
@@ -36,7 +40,7 @@ import trafochainselection.TransformationChain;
  * @generated
  */
 public class TransformationChainImpl extends MinimalEObjectImpl.Container implements TransformationChain {
-	/**
+   /**
     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -45,6 +49,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
     * @ordered
     */
    protected static final String ID_EDEFAULT = null;
+
    /**
     * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -54,6 +59,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
     * @ordered
     */
    protected String id = ID_EDEFAULT;
+
    /**
     * The default value of the '{@link #getInputModel() <em>Input Model</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -63,6 +69,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
     * @ordered
     */
    protected static final String INPUT_MODEL_EDEFAULT = null;
+
    /**
     * The cached value of the '{@link #getInputModel() <em>Input Model</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -72,6 +79,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
     * @ordered
     */
    protected String inputModel = INPUT_MODEL_EDEFAULT;
+
    /**
     * The cached value of the '{@link #getStart() <em>Start</em>}' reference.
     * <!-- begin-user-doc -->
@@ -81,6 +89,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
     * @ordered
     */
    protected Metamodel start;
+
    /**
     * The cached value of the '{@link #getFinal() <em>Final</em>}' reference.
     * <!-- begin-user-doc -->
@@ -90,6 +99,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
     * @ordered
     */
    protected Metamodel final_;
+
    /**
     * The cached value of the '{@link #getUses() <em>Uses</em>}' reference list.
     * <!-- begin-user-doc -->
@@ -99,6 +109,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
     * @ordered
     */
    protected EList<Transformation> uses;
+
    /**
     * The cached value of the '{@link #getOutputMM() <em>Output MM</em>}' reference.
     * <!-- begin-user-doc -->
@@ -110,48 +121,57 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
    protected Metamodel outputMM;
 
    /**
+    * This is true if the Output MM reference has been set.
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    * @ordered
+    */
+   protected boolean outputMMESet;
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	protected TransformationChainImpl() {
+   protected TransformationChainImpl() {
       super();
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	protected EClass eStaticClass() {
+   @Override
+   protected EClass eStaticClass() {
       return TrafochainselectionPackage.Literals.TRANSFORMATION_CHAIN;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public String getId() {
+   @Override
+   public String getId() {
       return id;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setId(String newId) {
+   @Override
+   public void setId(String newId) {
       String oldId = id;
       id = newId;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION_CHAIN__ID, oldId, id));
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -176,11 +196,11 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public Metamodel getStart() {
+   @Override
+   public Metamodel getStart() {
       if (start != null && start.eIsProxy()) {
          InternalEObject oldStart = (InternalEObject)start;
          start = (Metamodel)eResolveProxy(oldStart);
@@ -192,7 +212,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
       return start;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -203,24 +223,24 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setStart(Metamodel newStart) {
+   @Override
+   public void setStart(Metamodel newStart) {
       Metamodel oldStart = start;
       start = newStart;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION_CHAIN__START, oldStart, start));
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public Metamodel getFinal() {
+   @Override
+   public Metamodel getFinal() {
       if (final_ != null && final_.eIsProxy()) {
          InternalEObject oldFinal = (InternalEObject)final_;
          final_ = (Metamodel)eResolveProxy(oldFinal);
@@ -232,7 +252,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
       return final_;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -243,38 +263,37 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setFinal(Metamodel newFinal) {
+   @Override
+   public void setFinal(Metamodel newFinal) {
       Metamodel oldFinal = final_;
       final_ = newFinal;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION_CHAIN__FINAL, oldFinal, final_));
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@SuppressWarnings("unchecked")
-	@Override
-	public EList<Transformation> getUses() {
+   @Override
+   public EList<Transformation> getUses() {
       if (uses == null) {
          uses = new EObjectResolvingEList<Transformation>(Transformation.class, this, TrafochainselectionPackage.TRANSFORMATION_CHAIN__USES);
       }
       return uses;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public Metamodel getOutputMM() {
+   @Override
+   public Metamodel getOutputMM() {
       if (outputMM != null && outputMM.eIsProxy()) {
          InternalEObject oldOutputMM = (InternalEObject)outputMM;
          outputMM = (Metamodel)eResolveProxy(oldOutputMM);
@@ -286,7 +305,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
       return outputMM;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -297,15 +316,42 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setOutputMM(Metamodel newOutputMM) {
+   @Override
+   public void setOutputMM(Metamodel newOutputMM) {
       Metamodel oldOutputMM = outputMM;
       outputMM = newOutputMM;
+      boolean oldOutputMMESet = outputMMESet;
+      outputMMESet = true;
       if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION_CHAIN__OUTPUT_MM, oldOutputMM, outputMM));
+         eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION_CHAIN__OUTPUT_MM, oldOutputMM, outputMM, !oldOutputMMESet));
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public void unsetOutputMM() {
+      Metamodel oldOutputMM = outputMM;
+      boolean oldOutputMMESet = outputMMESet;
+      outputMM = null;
+      outputMMESet = false;
+      if (eNotificationRequired())
+         eNotify(new ENotificationImpl(this, Notification.UNSET, TrafochainselectionPackage.TRANSFORMATION_CHAIN__OUTPUT_MM, oldOutputMM, null, oldOutputMMESet));
+   }
+
+   /**
+    * <!-- begin-user-doc -->
+    * <!-- end-user-doc -->
+    * @generated
+    */
+   @Override
+   public boolean isSetOutputMM() {
+      return outputMMESet;
    }
 
    /**
@@ -391,7 +437,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
             getUses().clear();
             return;
          case TrafochainselectionPackage.TRANSFORMATION_CHAIN__OUTPUT_MM:
-            setOutputMM((Metamodel)null);
+            unsetOutputMM();
             return;
       }
       super.eUnset(featureID);
@@ -416,7 +462,7 @@ public class TransformationChainImpl extends MinimalEObjectImpl.Container implem
          case TrafochainselectionPackage.TRANSFORMATION_CHAIN__USES:
             return uses != null && !uses.isEmpty();
          case TrafochainselectionPackage.TRANSFORMATION_CHAIN__OUTPUT_MM:
-            return outputMM != null;
+            return isSetOutputMM();
       }
       return super.eIsSet(featureID);
    }

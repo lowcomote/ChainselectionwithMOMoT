@@ -3,10 +3,12 @@
 package trafochainselection.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import trafochainselection.Metamodel;
 import trafochainselection.TrafochainselectionPackage;
 
@@ -24,7 +26,7 @@ import trafochainselection.TrafochainselectionPackage;
  * @generated
  */
 public class MetamodelImpl extends MinimalEObjectImpl.Container implements Metamodel {
-	/**
+   /**
     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -33,6 +35,7 @@ public class MetamodelImpl extends MinimalEObjectImpl.Container implements Metam
     * @ordered
     */
    protected static final String ID_EDEFAULT = null;
+
    /**
     * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -45,40 +48,40 @@ public class MetamodelImpl extends MinimalEObjectImpl.Container implements Metam
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	protected MetamodelImpl() {
+   protected MetamodelImpl() {
       super();
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	protected EClass eStaticClass() {
+   @Override
+   protected EClass eStaticClass() {
       return TrafochainselectionPackage.Literals.METAMODEL;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public String getId() {
+   @Override
+   public String getId() {
       return id;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setId(String newId) {
+   @Override
+   public void setId(String newId) {
       String oldId = id;
       id = newId;
       if (eNotificationRequired())

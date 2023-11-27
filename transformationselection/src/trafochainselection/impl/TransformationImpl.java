@@ -2,13 +2,14 @@
  */
 package trafochainselection.impl;
 
-import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import trafochainselection.Metamodel;
 import trafochainselection.TrafochainselectionPackage;
 import trafochainselection.Transformation;
@@ -24,7 +25,6 @@ import trafochainselection.Transformation;
  *   <li>{@link trafochainselection.impl.TransformationImpl#getId <em>Id</em>}</li>
  *   <li>{@link trafochainselection.impl.TransformationImpl#getSrc <em>Src</em>}</li>
  *   <li>{@link trafochainselection.impl.TransformationImpl#getTarget <em>Target</em>}</li>
- *   <li>{@link trafochainselection.impl.TransformationImpl#getMetrics <em>Metrics</em>}</li>
  *   <li>{@link trafochainselection.impl.TransformationImpl#getComplexity <em>Complexity</em>}</li>
  *   <li>{@link trafochainselection.impl.TransformationImpl#getCoverage <em>Coverage</em>}</li>
  * </ul>
@@ -32,7 +32,7 @@ import trafochainselection.Transformation;
  * @generated
  */
 public class TransformationImpl extends MinimalEObjectImpl.Container implements Transformation {
-	/**
+   /**
     * The default value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
@@ -41,6 +41,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * @ordered
     */
    protected static final String ID_EDEFAULT = null;
+
    /**
     * The cached value of the '{@link #getId() <em>Id</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -50,6 +51,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * @ordered
     */
    protected String id = ID_EDEFAULT;
+
    /**
     * The cached value of the '{@link #getSrc() <em>Src</em>}' reference.
     * <!-- begin-user-doc -->
@@ -59,6 +61,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * @ordered
     */
    protected Metamodel src;
+
    /**
     * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
     * <!-- begin-user-doc -->
@@ -68,15 +71,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * @ordered
     */
    protected Metamodel target;
-   /**
-    * The cached value of the '{@link #getMetrics() <em>Metrics</em>}' attribute.
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @see #getMetrics()
-    * @generated
-    * @ordered
-    */
-   protected Map<String, Double> metrics;
+
    /**
     * The default value of the '{@link #getComplexity() <em>Complexity</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -86,6 +81,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * @ordered
     */
    protected static final int COMPLEXITY_EDEFAULT = 0;
+
    /**
     * The cached value of the '{@link #getComplexity() <em>Complexity</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -95,6 +91,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * @ordered
     */
    protected int complexity = COMPLEXITY_EDEFAULT;
+
    /**
     * The default value of the '{@link #getCoverage() <em>Coverage</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -104,6 +101,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * @ordered
     */
    protected static final double COVERAGE_EDEFAULT = 0.0;
+
    /**
     * The cached value of the '{@link #getCoverage() <em>Coverage</em>}' attribute.
     * <!-- begin-user-doc -->
@@ -113,55 +111,56 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * @ordered
     */
    protected double coverage = COVERAGE_EDEFAULT;
+
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	protected TransformationImpl() {
+   protected TransformationImpl() {
       super();
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	protected EClass eStaticClass() {
+   @Override
+   protected EClass eStaticClass() {
       return TrafochainselectionPackage.Literals.TRANSFORMATION;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public String getId() {
+   @Override
+   public String getId() {
       return id;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setId(String newId) {
+   @Override
+   public void setId(String newId) {
       String oldId = id;
       id = newId;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION__ID, oldId, id));
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public Metamodel getSrc() {
+   @Override
+   public Metamodel getSrc() {
       if (src != null && src.eIsProxy()) {
          InternalEObject oldSrc = (InternalEObject)src;
          src = (Metamodel)eResolveProxy(oldSrc);
@@ -173,7 +172,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
       return src;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -184,25 +183,24 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setSrc(Metamodel newSrc) {
+   @Override
+   public void setSrc(Metamodel newSrc) {
       Metamodel oldSrc = src;
       src = newSrc;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION__SRC, oldSrc, src));
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@SuppressWarnings("unchecked")
-	@Override
-	public Metamodel getTarget() {
+   @Override
+   public Metamodel getTarget() {
       if (target != null && target.eIsProxy()) {
          InternalEObject oldTarget = (InternalEObject)target;
          target = (Metamodel)eResolveProxy(oldTarget);
@@ -214,7 +212,7 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
       return target;
    }
 
-	/**
+   /**
     * <!-- begin-user-doc -->
     * <!-- end-user-doc -->
     * @generated
@@ -225,38 +223,15 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
 
    /**
     * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+    * <!-- end-user-doc -->
     * @generated
     */
-	@Override
-	public void setTarget(Metamodel newTarget) {
+   @Override
+   public void setTarget(Metamodel newTarget) {
       Metamodel oldTarget = target;
       target = newTarget;
       if (eNotificationRequired())
          eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION__TARGET, oldTarget, target));
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public Map<String, Double> getMetrics() {
-      return metrics;
-   }
-
-   /**
-    * <!-- begin-user-doc -->
-    * <!-- end-user-doc -->
-    * @generated
-    */
-   @Override
-   public void setMetrics(Map<String, Double> newMetrics) {
-      Map<String, Double> oldMetrics = metrics;
-      metrics = newMetrics;
-      if (eNotificationRequired())
-         eNotify(new ENotificationImpl(this, Notification.SET, TrafochainselectionPackage.TRANSFORMATION__METRICS, oldMetrics, metrics));
    }
 
    /**
@@ -321,8 +296,6 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
          case TrafochainselectionPackage.TRANSFORMATION__TARGET:
             if (resolve) return getTarget();
             return basicGetTarget();
-         case TrafochainselectionPackage.TRANSFORMATION__METRICS:
-            return getMetrics();
          case TrafochainselectionPackage.TRANSFORMATION__COMPLEXITY:
             return getComplexity();
          case TrafochainselectionPackage.TRANSFORMATION__COVERAGE:
@@ -336,7 +309,6 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
     * <!-- end-user-doc -->
     * @generated
     */
-   @SuppressWarnings("unchecked")
    @Override
    public void eSet(int featureID, Object newValue) {
       switch (featureID) {
@@ -348,9 +320,6 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
             return;
          case TrafochainselectionPackage.TRANSFORMATION__TARGET:
             setTarget((Metamodel)newValue);
-            return;
-         case TrafochainselectionPackage.TRANSFORMATION__METRICS:
-            setMetrics((Map<String, Double>)newValue);
             return;
          case TrafochainselectionPackage.TRANSFORMATION__COMPLEXITY:
             setComplexity((Integer)newValue);
@@ -379,9 +348,6 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
          case TrafochainselectionPackage.TRANSFORMATION__TARGET:
             setTarget((Metamodel)null);
             return;
-         case TrafochainselectionPackage.TRANSFORMATION__METRICS:
-            setMetrics((Map<String, Double>)null);
-            return;
          case TrafochainselectionPackage.TRANSFORMATION__COMPLEXITY:
             setComplexity(COMPLEXITY_EDEFAULT);
             return;
@@ -406,8 +372,6 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
             return src != null;
          case TrafochainselectionPackage.TRANSFORMATION__TARGET:
             return target != null;
-         case TrafochainselectionPackage.TRANSFORMATION__METRICS:
-            return metrics != null;
          case TrafochainselectionPackage.TRANSFORMATION__COMPLEXITY:
             return complexity != COMPLEXITY_EDEFAULT;
          case TrafochainselectionPackage.TRANSFORMATION__COVERAGE:
@@ -428,8 +392,6 @@ public class TransformationImpl extends MinimalEObjectImpl.Container implements 
       StringBuilder result = new StringBuilder(super.toString());
       result.append(" (id: ");
       result.append(id);
-      result.append(", metrics: ");
-      result.append(metrics);
       result.append(", complexity: ");
       result.append(complexity);
       result.append(", coverage: ");

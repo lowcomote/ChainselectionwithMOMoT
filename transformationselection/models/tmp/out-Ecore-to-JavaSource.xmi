@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nsPrefix="http://www.eclipse.org/gmt/2005/JavaSource" xsi:schemaLocation="http://www.eclipse.org/gmt/2005/JavaSource metamodels/JavaSource.ecore">
+  <nsPrefix:JavaSource>
+    <classes name="Graph"/>
+    <classes name="Node" superclass="/0/@classes.0">
+      <methods name="setName"/>
+      <methods name="getName"/>
+      <prop name="name"/>
+    </classes>
+    <classes name="Edge" superclass="/0/@classes.0">
+      <methods name="setName"/>
+      <methods name="getName"/>
+      <methods name="setSourceNode"/>
+      <methods name="getSourceNode"/>
+      <methods name="setTargetNode"/>
+      <methods name="getTargetNode"/>
+      <prop name="name"/>
+      <prop name="sourceNode"/>
+      <prop name="targetNode"/>
+    </classes>
+  </nsPrefix:JavaSource>
+  <nsPrefix:JavaSource/>
+</xmi:XMI>

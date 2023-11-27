@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:XML="xml.com" xsi:schemaLocation="xml.com metamodels/XML.ecore#/0">
+  <XML:Element name="table">
+    <children xsi:type="XML:Element" name="tr">
+      <children xsi:type="XML:Element" name="th"/>
+    </children>
+  </XML:Element>
+  <XML:Element name="table">
+    <children xsi:type="XML:Element" name="tr">
+      <children xsi:type="XML:Element" name="th"/>
+    </children>
+  </XML:Element>
+  <XML:Attribute name="border" value="1"/>
+  <XML:Text value=""/>
+  <XML:Attribute name="border" value="1"/>
+  <XML:Text value=""/>
+</xmi:XMI>

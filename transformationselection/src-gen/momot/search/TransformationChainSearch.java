@@ -50,7 +50,7 @@ public class TransformationChainSearch {
 
   protected final int maxEvaluations = 110;
 
-  protected final int nrRuns = 5;
+  protected final int nrRuns = 1;
 
   protected String baseName;
 

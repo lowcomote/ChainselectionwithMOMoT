@@ -32,9 +32,13 @@ import at.ac.tuwien.big.momot.search.fitness.dimension.TransformationLengthDimen
 import at.ac.tuwien.big.momot.util.MomotUtil;
 
 import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -43,9 +47,15 @@ import java.util.Map.Entry;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.henshin.interpreter.EGraph;
 import org.eclipse.emf.henshin.interpreter.RuleApplication;
 import org.eclipse.emf.henshin.model.Parameter;
+import org.eclipse.epsilon.emc.emf.AbstractEmfModel;
+import org.eclipse.epsilon.emc.emf.EmfMetaModel;
+import org.eclipse.epsilon.emc.emf.EmfModel;
+import org.eclipse.epsilon.eol.EolModule;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.moeaframework.algorithm.EpsilonMOEA;
 import org.moeaframework.algorithm.NSGAII;
@@ -69,7 +79,7 @@ import trafochainselection.TransformationModel;
 
 @SuppressWarnings("all")
 public class ExhaustiveChainSearch {
-   protected static final String INITIAL_MODEL = "problem/Instance-3.xmi";
+   protected static final String INITIAL_MODEL = "problem/Instance-1.xmi";
 
    protected static final int SOLUTION_LENGTH = 6;
 
@@ -84,8 +94,9 @@ public class ExhaustiveChainSearch {
 
    public static void main(final String... args) {
       initialization();
-      final int nrRuns = 3;
+      final int nrRuns = 1;
       final ExhaustiveChainSearch search = new ExhaustiveChainSearch();
+      search.performSearch(INITIAL_MODEL, SOLUTION_LENGTH);
       List<Double> runtimes = new ArrayList<>();
 
       for(int i = 0; i < nrRuns + 1; i++) {
@@ -97,7 +108,7 @@ public class ExhaustiveChainSearch {
       runtimes = runtimes.subList(1, runtimes.size());
       System.out.println("Exploration times: " + Arrays.toString(runtimes.toArray()));
       System.out.println(String.format("Mean exploration time: %.3f",
-            runtimes.subList(1, runtimes.size()).stream().mapToDouble(x -> x.doubleValue()).average().getAsDouble()));
+            runtimes.stream().mapToDouble(x -> x.doubleValue()).average().getAsDouble()));
       finalization();
    }
 
@@ -323,40 +334,123 @@ public class ExhaustiveChainSearch {
       } else {
          baseName = root.eResource().getURI().trimFileExtension().lastSegment();
       }
+
+      // final Graph g = graph("ex1").directed()
+      // .with(graph().cluster().nodeAttr().with(Style.FILLED, Color.WHITE).graphAttr()
+      // .with(Style.FILLED, Color.LIGHTGREY, Label.of("process #1"))
+      // .with(node("a0").link(node("a1").link(node("a2")))),
+      // graph("x").cluster().nodeAttr().with(Style.FILLED).graphAttr()
+      // .with(Color.BLUE, Label.of("process #2")).with(node("b0").link(node("b1").link(node("b2")))),
+      // node("start").with(Shape.M_DIAMOND).link("a0", "b0"),
+      // node("a0").with(Style.FILLED, Color.RED.gradient(Color.BLUE)).link("b1"), node("b1").link("a2"),
+      // node("a2").link("end"), node("b2").link("end"), node("end").with(Shape.M_SQUARE));
    }
 
    protected Graph generateGraph(final Population p) {
-      Graph g = graph("example1").directed().graphAttr().with(Rank.dir(LEFT_TO_RIGHT)).nodeAttr()
+      Graph g = graph("example 1").directed().graphAttr().with(Rank.dir(LEFT_TO_RIGHT)).nodeAttr()
             .with(Font.name("arial")).linkAttr().with("class", "link-class");
+      // .with(graph().cluster().nodeAttr().with(Style.FILLED, Color.WHITE).graphAttr()
+      // .with(Style.FILLED, Color.WHITE, Label.of("sample-km3.xmi"))
+      // .with(node("\\KM3.ecore").with("margin", "0.2").with(Style.FILLED, Color.rgb("EEEEEE"))))
+      // .with(graph().cluster().nodeAttr().with(Style.FILLED, Color.WHITE).graphAttr()
+      // .with(Style.FILLED, Color.WHITE, Label.of("out-xml.xmi"))
+      // .with(node("\\XML.ecore").with("margin", "0.2").with(Style.FILLED, Color.rgb("EEEEEE"))));
       int i = 0;
+      System.setProperty("org.eclipse.emf.ecore.EPackage.Registry.INSTANCE",
+            "org.eclipse.emf.ecore.impl.EPackageRegistryImpl");
       for(final TransformationSolution ts : MomotUtil.asIterables(p, TransformationSolution.class)) {
          final EGraph graph = ts.execute();
          final TransformationModel a = (TransformationModel) graph.getRoots().get(0);
          final EList<Transformation> transformations = a.getTransformationchain().getUses();
          final List<Node> nodes = new ArrayList<>();
+         String currentInputModel = null;
+         String currentCoverage = null;
+         int trafoCount = 0;
+
+         try {
+            org.apache.commons.io.FileUtils.cleanDirectory(Path.of("models", "tmp").toFile());
+         } catch(final IOException e) {
+            e.printStackTrace();
+         }
+
          for(final Transformation t : transformations) {
             final double similarityMM = FitnessCalculator.getSimilarityMM().get(t.getId());
-            // final double modelCov = FitnessCalculator.getModelCoverage(null)
 
-            nodes.add(
-                  node(t.getSrc().getId().substring(10)).link(to(node(t.getTarget().getId().substring(10))).with(
-                        Style.BOLD, Label.of(String.format("Tr. coverage: %.3f\nTr. complexity: %d\nMM sim.: %.3f",
-                              t.getCoverage(), t.getComplexity(), similarityMM)),
-                        Color.rgb(hexCols[i % hexCols.length]))));
+            final String sourceMMIdentifier = FitnessCalculator.extractFileNameWithoutExtension(t.getSrc().getId());
+            final String targetMMIdentifier = FitnessCalculator.extractFileNameWithoutExtension(t.getTarget().getId());
+            final String outputModelPath = "models/tmp/out-" + sourceMMIdentifier + "-to-" + targetMMIdentifier
+                  + ".xmi";
+
+            final String trafoName = sourceMMIdentifier + "2" + targetMMIdentifier + ".etl";
+            // trafo, inp_model, t.scr.id.name,t.src.id, out_model, t.trg.id.name, t.trg.id
+
+            Transformer.transform(Path.of("transformations", "i1", trafoName),
+                  currentInputModel == null ? "models/sample-km3.xmi" : currentInputModel, sourceMMIdentifier,
+                  Path.of("metamodels", sourceMMIdentifier + ".ecore").toString(), outputModelPath, targetMMIdentifier,
+                  Path.of("metamodels", targetMMIdentifier + ".ecore").toString());
+
+            currentInputModel = outputModelPath;
+            final EolModule module = new EolModule();
+
+            try {
+               module.parse(new File("model_cov.eol"));
+
+               final OutputStream outputStream = new ByteArrayOutputStream();
+               final String sourceMM = Path.of("metamodels", targetMMIdentifier + ".ecore").toString();
+               final String sourceModel = outputModelPath;
+
+               AbstractEmfModel emfModelMM = null;
+
+               if(targetMMIdentifier.compareTo("Ecore") != 0) {
+                  emfModelMM = new EmfModel();
+                  emfModelMM.setName("MM"); // Set the name to "MM"
+                  ((EmfModel) emfModelMM).setModelFile(sourceMM);
+               } else {
+                  EPackage.Registry.INSTANCE.put(EcorePackage.eNS_URI, EcorePackage.eINSTANCE);
+
+                  emfModelMM = new EmfMetaModel("MM", EcorePackage.eNS_URI);
+               }
+
+               final EmfModel emfModelM = new EmfModel();
+               emfModelM.setName("m"); // Set the name to "MM"
+               emfModelM.setModelFile(sourceModel); // Set the path to the model
+
+               emfModelMM.load();
+               emfModelM.load();
+
+               module.getContext().setOutputStream(new PrintStream(outputStream));
+               module.getContext().getModelRepository().addModel(emfModelMM);
+               module.getContext().getModelRepository().addModel(emfModelM);
+
+               module.execute();
+
+               emfModelMM.dispose();
+               emfModelM.dispose();
+
+               currentCoverage = outputStream.toString();
+            } catch(final Exception e) {
+               e.printStackTrace();
+            }
+            final Node srcNode = nodes.isEmpty() ? node(t.getSrc().getId().substring(10)).with(
+                  Label.html(t.getSrc().getId().substring(11) + "<br/><i>sample-km3.xmi</i>"),
+                  Color.rgb("000000").font()) : node(t.getSrc().getId().substring(10)).with(Font.size(15));
+
+            final Node trgNode = trafoCount + 1 == transformations.size() ? node(t.getTarget().getId().substring(10))
+                  .with(Label.html(t.getTarget().getId().substring(11) + "<br/><i>out-xml.xmi</i>"),
+                        Color.rgb("000000").font())
+                  : node(t.getTarget().getId().substring(10));
+
+            nodes.add(srcNode.link(to(trgNode).with(Style.BOLD,
+                  Label.of(String.format("T-COV: %.3f\nT-COM: %d\nM-COV: %.3f\nMM-SIM: %.3f", t.getCoverage(),
+                        t.getComplexity(), Double.parseDouble(currentCoverage), similarityMM)),
+                  Color.rgb(hexCols[i % hexCols.length]))));
+
+            trafoCount++;
          }
-         // Color.hsv(colorStep, colorStep, interval)
-         // java.awt.color.
 
          g = g.with(nodes);
          i++;
-         // final String uri = file.getAbsolutePath();
       }
-
-      // final Graph g = graph("example1").directed().graphAttr().with(Rank.dir(LEFT_TO_RIGHT)).nodeAttr()
-      // .with(Font.name("arial")).linkAttr().with("class", "link-class")
-      // .with(node("a").with(Color.RED).link(node("b")),
-      // node("b").link(to(node("c")).with(Style.BOLD, Label.of("100 times\nasjdnasd\n200"), Color.RED)))
-      // .with(node("a"));
 
       return g;
    }

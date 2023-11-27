@@ -1,0 +1,37 @@
+model KM3 driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/KM3"
+};
+
+model Table driver EMF {
+nsuri = "http://www.eclipse.org/gmt/2005/Table"
+};
+
+pre {
+	"KM32Table Transformation starts".println();
+}
+
+rule Package2Table
+transform s : KM3!Package
+to t : Table!Table
+ {
+	t.rows = s.contents.equivalent();
+}
+
+rule Class2Row
+transform s : KM3!Class
+to r : Table!Row
+ {
+ 	r.name = s.name;
+	r.cells = s.supertypes.equivalent();
+}
+
+rule Attr2Cell
+transform s : KM3!Attribute
+to t1 : Table!Cell
+ {
+	t1.content = s.name;
+}
+
+post {
+	"KM32Table Transformation end.".println();
+}

@@ -1,11 +1,13 @@
 package trafochainselection.demo;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -13,14 +15,27 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-import org.apache.commons.lang3.math.NumberUtils;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.util.BasicExtendedMetaData;
+import org.eclipse.emf.ecore.util.ExtendedMetaData;
+import org.eclipse.emf.ecore.xmi.XMLResource;
+import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+import org.eclipse.epsilon.emc.emf.AbstractEmfModel;
+import org.eclipse.epsilon.emc.emf.EmfMetaModel;
+import org.eclipse.epsilon.emc.emf.EmfModel;
+import org.eclipse.epsilon.eol.EolModule;
+import org.eclipse.epsilon.eol.exceptions.models.EolModelLoadingException;
+import org.eclipse.epsilon.eol.models.IModel;
 import org.eclipse.epsilon.etl.EtlModule;
 import org.eclipse.epsilon.etl.chain.selection.Chaining_MT;
 
@@ -33,10 +48,6 @@ public final class FitnessCalculator {
    static Path metamodelsRoot = Paths.get("metamodels");
    static Path scriptRoot = Paths.get("scripts");
    static File scriptPath = new File("scripts");
-
-   final static String filePath = "C:\\Users\\sahay\\git\\repository\\org.eclipse.epsilon.etl.chain.optimisation\\write.txt";
-   final static String filePath2 = "similarityvalues.txt";
-   final static String filePath_complexity = "C:\\Users\\sahay\\git\\repository\\org.eclipse.epsilon.etl.chain.optimisation\\writeComplexity.txt";
 
    // public static double calculateTransformationCoverage(final TransformationModel model) {
    // double dummyCoverage = 0;
@@ -128,269 +139,79 @@ public final class FitnessCalculator {
 
    public static double calculateModelCoverage(final TransformationModel model) throws Exception {
       // final Chaining_MT chainingMt = new Chaining_MT();
-      double modelcoverage = 0.0;
+      org.apache.commons.io.FileUtils.cleanDirectory(Path.of("models", "tmp").toFile());
+
       final ArrayList<String> chain = new ArrayList<>();
       for(final Transformation t : model.getTransformationchain().getUses()) {
          chain.add(t.getId());
       }
 
-      // if(chainToModelCoverage.containsKey(chain)) {
-      // return chainToModelCoverage.get(chain);
-      // }
-      //
-      // // compute chain coverage and store it
-      // final double mCov = calculateModelCoverage(chain);
-      // chainToModelCoverage.put(chain, mCov);
-      //
-      // return mCov;
+      String currentInputModel = null;
+      String outputModelPath = null;
+      String targetMMIdentifier = null;
 
-      /*
-       * {
-       * System.out.println(chain);
-       * }
-       */
-      if(chain.equals(getChain1())) {
-         // System.out.println(getChain1());
-         modelcoverage = 0.3125;
-      } else if(chain.equals(getChain1_1())) {
-         // System.out.println(getChain1_1());
-         modelcoverage = 0.3125;
-      }
-      if(chain.equals(getChain1_j1())) {
-         // System.out.println(getChain1_j1());
-         modelcoverage = 0.3125;
-      } else if(chain.equals(getChain1_1_j1())) {
-         // System.out.println(getChain1_1_j1());
-         modelcoverage = 0.3125;
-      } else if(chain.equals(getChain2())) {
-         // System.out.println(getChain2());
-         modelcoverage = 0.3125;
-      } else if(chain.equals(getChain2_j1())) {
-         // System.out.println(getChain2_j1());
-         modelcoverage = 0.3125;
-      } else if(chain.equals(getChain3())) {
-         // System.out.println(getChain3());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain3_j1())) {
-         // System.out.println(getChain3_j1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain3_t1())) {
-         // System.out.println(getChain3_t1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain3_j1_t1())) {
-         // System.out.println(getChain3_j1_t1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain4())) {
-         // System.out.println(getChain4());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain4_1())) {
-         // System.out.println(getChain4_1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain4_j1())) {
-         // System.out.println(getChain4_j1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain4_1_j1())) {
-         // System.out.println(getChain4_1_j1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain4_t1())) {
-         // System.out.println(getChain4_t1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain4_1_t1())) {
-         // System.out.println(getChain4_1_t1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain4_j1_t1())) {
-         // System.out.println(getChain4_j1_t1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain4_1_j1_t1())) {
-         System.out.println(getChain4_1_j1_t1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain5())) {
-         System.out.println(getChain5());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_1())) {
-         System.out.println(getChain5_1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_j1())) {
-         System.out.println(getChain5_j1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_1_j1())) {
-         System.out.println(getChain5_1_j1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_t1())) {
-         System.out.println(getChain5_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_1_t1())) {
-         System.out.println(getChain5_1_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_j1_t1())) {
-         System.out.println(getChain5_j1_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_1_j1_t1())) {
-         System.out.println(getChain5_1_j1_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_h1())) {
-         System.out.println(getChain5_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_1_h1())) {
-         System.out.println(getChain5_1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_j1_h1())) {
-         System.out.println(getChain5_j1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_1_j1_h1())) {
-         System.out.println(getChain5_1_j1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_t1_h1())) {
-         System.out.println(getChain5_t1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_1_t1_h1())) {
-         System.out.println(getChain5_1_t1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_j1_t1_h1())) {
-         System.out.println(getChain5_j1_t1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain5_1_j1_t1_h1())) {
-         System.out.println(getChain5_1_j1_t1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain6())) {
-         System.out.println(getChain6());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain6_j1())) {
-         System.out.println(getChain6_j1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain6_t1())) {
-         System.out.println(getChain6_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain6_j1_t1())) {
-         System.out.println(getChain6_j1_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain6_h1())) {
-         System.out.println(getChain6_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain6_j1_h1())) {
-         System.out.println(getChain6_j1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain6_t1_h1())) {
-         System.out.println(getChain6_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain6_j1_t1_h1())) {
-         System.out.println(getChain6_j1_t1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain7())) {
-         System.out.println(getChain7());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain8())) {
-         System.out.println(getChain8());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain8_1())) {
-         System.out.println(getChain8_1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain8_j1())) {
-         System.out.println(getChain8_j1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain8_1_j1())) {
-         System.out.println(getChain8_1_j1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain8_h1())) {
-         System.out.println(getChain8_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain8_1_h1())) {
-         System.out.println(getChain8_1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain8_j1_h1())) {
-         System.out.println(getChain8_j1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain8_1_j1_h1())) {
-         System.out.println(getChain8_1_j1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain9())) {
-         System.out.println(getChain9());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain9_j1())) {
-         System.out.println(getChain9_j1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain9_h1())) {
-         System.out.println(getChain9_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain9_j1_h1())) {
-         System.out.println(getChain9_j1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain10())) {
-         System.out.println(getChain10());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain10_1())) {
-         System.out.println(getChain10_1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain10_t1())) {
-         System.out.println(getChain10_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain10_1_t1())) {
-         System.out.println(getChain10_1_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain10_h1())) {
-         System.out.println(getChain10_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain10_1_h1())) {
-         System.out.println(getChain10_1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain10_t1_h1())) {
-         System.out.println(getChain10_t1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain10_1_t1_h1())) {
-         System.out.println(getChain10_1_t1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain11())) {
-         System.out.println(getChain11());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain11_1())) {
-         System.out.println(getChain11_1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain11_t1())) {
-         System.out.println(getChain11_t1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain11_1_t1())) {
-         System.out.println(getChain11_1_t1());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain12())) {
-         System.out.println(getChain12());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain12_t1())) {
-         System.out.println(getChain12_t1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain12_h1())) {
-         System.out.println(getChain12_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain12_t1_h1())) {
-         System.out.println(getChain12_t1_h1());
-         modelcoverage = 0.4375;
-      } else if(chain.equals(getChain13())) {
-         System.out.println(getChain13());
-         modelcoverage = 0.1875;
-      } else if(chain.equals(getChain13_t1())) {
-         System.out.println(getChain13_t1());
-         modelcoverage = 0.1875;
-      } else {
-         modelcoverage = 0;
+      for(final Transformation t : model.getTransformationchain().getUses()) {
+
+         final String sourceMMIdentifier = extractFileNameWithoutExtension(t.getSrc().getId());
+         targetMMIdentifier = extractFileNameWithoutExtension(t.getTarget().getId());
+         outputModelPath = "models/tmp/out-" + sourceMMIdentifier + "-to-" + targetMMIdentifier + ".xmi";
+
+         final String trafoName = sourceMMIdentifier + "2" + targetMMIdentifier + ".etl";
+         // trafo, inp_model, t.scr.id.name,t.src.id, out_model, t.trg.id.name, t.trg.id
+
+         Transformer.transform(Path.of("transformations", "i1", trafoName),
+               currentInputModel == null ? "models/sample-km3.xmi" : currentInputModel, sourceMMIdentifier,
+               Path.of("metamodels", sourceMMIdentifier + ".ecore").toString(), outputModelPath, targetMMIdentifier,
+               Path.of("metamodels", targetMMIdentifier + ".ecore").toString());
+
+         currentInputModel = outputModelPath;
+
       }
 
-      // if(count == 1) {
-      // modelcoverage = 0.4375;
-      // }
-      // if(count == 2) {
-      // modelcoverage = 0.3125;
-      // }
-      // if(count == 3) {
-      // modelcoverage = 0.3125;
-      // }
-      // if(count == 4) {
-      // modelcoverage = 0.4375;
-      // }
-      // if(count == 5) {
-      // modelcoverage = 0.4375;
-      // }
+      final EolModule module = new EolModule();
 
-      // System.out.println("Model Coverage: " + modelcoverage);
-      return modelcoverage;
+      try {
+         module.parse(new File("model_cov.eol"));
+
+         final OutputStream outputStream = new ByteArrayOutputStream();
+         final String sourceMM = Path.of("metamodels", targetMMIdentifier + ".ecore").toString();
+         final String sourceModel = outputModelPath;
+
+         AbstractEmfModel emfModelMM = null;
+
+         if(targetMMIdentifier.compareTo("Ecore") != 0) {
+            emfModelMM = new EmfModel();
+            emfModelMM.setName("MM"); // Set the name to "MM"
+            ((EmfModel) emfModelMM).setModelFile(sourceMM);
+         } else {
+            EPackage.Registry.INSTANCE.put(EcorePackage.eNS_URI, EcorePackage.eINSTANCE);
+
+            emfModelMM = new EmfMetaModel("MM", EcorePackage.eNS_URI);
+         }
+
+         final EmfModel emfModelM = new EmfModel();
+         emfModelM.setName("m"); // Set the name to "MM"
+         emfModelM.setModelFile(sourceModel); // Set the path to the model
+
+         emfModelMM.load();
+         emfModelM.load();
+
+         module.getContext().setOutputStream(new PrintStream(outputStream));
+         module.getContext().getModelRepository().addModel(emfModelMM);
+         module.getContext().getModelRepository().addModel(emfModelM);
+
+         module.execute();
+
+         emfModelMM.dispose();
+         emfModelM.dispose();
+
+         final String currentCoverage = outputStream.toString();
+         return Double.valueOf(currentCoverage);
+      } catch(final Exception e) {
+         e.printStackTrace();
+      }
+
+      throw new RuntimeException("Error computing model coverage!");
    }
 
    public static int calculateStructuralFeatures(final TransformationModel model) throws Exception {
@@ -590,85 +411,6 @@ public final class FitnessCalculator {
 
    }
 
-   // public static double calculateTransformationCoverage_Optimized(final TransformationModel model) throws Exception {
-   // final Chaining_MT chainingMt = new Chaining_MT();
-   // // final EtlChainOptimiser eco = new EtlChainOptimiser();
-   // // EtlChainOptimiser.calculateTransformationCoverageOnOptimizedTransformation_opt();
-   // double coverage_chain = 1;
-   //
-   // for(final Transformation t : model.getTransformationchain().getUses()) {
-   //
-   // // for(final Metamodel element : t.getTarget()) {
-   // double max_cov_mt = 0;
-   // for(final Double element : chainingMt.calculateMTCoverage_opt(t.getSrc().getId(), t.getTarget().getId())) {
-   //
-   // // }
-   // // coverage_chain *= element;
-   // if(element > max_cov_mt) {
-   // max_cov_mt = element;
-   // }
-   // System.out.println("\n" + "Individual Coverage of a MT " + t.getSrc().getId() + " -> "
-   // + t.getTarget().getId() + " is " + element);
-   //
-   // }
-   //
-   // System.out.println("\n" + "Maximum coverage of a MT " + t.getSrc().getId() + " -> " + t.getTarget().getId()
-   // + " is " + max_cov_mt);
-   // coverage_chain *= max_cov_mt;
-   //
-   // // }
-   // }
-   // System.out.println("\nTotal coverage of chain is " + coverage_chain + "\n");
-   // // System.out.println("Maximum coverage of a chain is " + max_cov_mt + "\n");
-   //
-   // return coverage_chain;
-   // }
-
-   // public static double calculateTransformationCoverage_Optimized2(final TransformationModel model) throws Exception
-   // {
-   //
-   // EtlChainOptimiser.calculateTransformationCoverageOnOptimizedTransformation();
-   //
-   // final double cov = EtlRewritingHandler.calculateTransformationCoverage_Optimized();
-   //
-   // return cov;
-   // }
-
-   public static double calculateTransformationCoverage_new2(final TransformationModel model) throws Exception {
-
-      final Chaining_MT chainingMt = new Chaining_MT();
-      // final LinkedHashMap<String, Double> coveragemt = EtlChainOptimiser.mt_coverage();
-      final LinkedHashMap<String, Double> mapFromFile = HashMapFromTextFile();
-      // System.out.println(mapFromFile);
-      double coverage_chain = 1;
-      final double start1 = System.currentTimeMillis();
-
-      for(final Transformation t : model.getTransformationchain().getUses()) {
-         double max_feature = 0.0;
-         for(final String ele : chainingMt.identifyETL(t.getSrc().getId(), t.getTarget().getId())) {
-            // final double mtcoverage = chainingMt.calculateMTCoverage_new1(t.getSrc().getId(), t.getTarget().getId());
-            // final double mtcoverage = mapFromFile.get(ele);
-            final double mtcoverage = t.getCoverage();
-            if(mtcoverage > max_feature) {
-               max_feature = mtcoverage;
-            }
-            // System.out.println("\n" + "Maximum coverage of a MT " + t.getSrc().getId() + " -> " +
-            // t.getTarget().getId()
-            // + " is " + max_feature);
-            coverage_chain *= max_feature;
-         }
-
-      }
-      // System.out.println("\nTotal coverage of chain " + model.getTransformationchain().getStart().getId() + " -> "
-      // + model.getTransformationchain().getFinal().getId() + " is " + coverage_chain + "\n");
-      // System.out.println("Time taken for coverage in chain " + model.getTransformationchain().getStart().getId()
-      // + " -> " + model.getTransformationchain().getFinal().getId() + " is "
-      // + (System.currentTimeMillis() - start1) / 1000 + " seconds.");
-
-      return coverage_chain;
-
-   }
-
    public static void evaluateModel(final String model) throws Exception {
       registerPackage();
       evaluateModel(loadModel(model));
@@ -683,6 +425,39 @@ public final class FitnessCalculator {
       printGeneralInfo(model);
       // printCorrectnessInfo(model);
       printOptimalityInfo(model);
+   }
+
+   public static String extractFileNameWithoutExtension(final String filePath) {
+      // Using FileSystems to handle different file separators
+      final Path path = FileSystems.getDefault().getPath(filePath);
+
+      // Get the file name (including extension) from the path
+      final String fileNameWithExtension = path.getFileName().toString();
+
+      // Find the last occurrence of the file separator
+      final int lastSeparatorIndex = fileNameWithExtension.lastIndexOf('\\');
+
+      // Extract the part after the last separator (file name with extension)
+      final String fileName = lastSeparatorIndex == -1 ? fileNameWithExtension
+            : fileNameWithExtension.substring(lastSeparatorIndex + 1);
+
+      // Find the last occurrence of the dot (.) to exclude the extension
+      final int lastDotIndex = fileName.lastIndexOf('.');
+
+      // Extract the part before the last dot (file name without extension)
+      final String mmName = lastDotIndex == -1 ? fileName : fileName.substring(0, lastDotIndex);
+
+      if(mmName.startsWith("KM3")) {
+         return "KM3";
+      }
+      // Define a regular expression pattern to match trailing digits
+      final Pattern pattern = Pattern.compile("\\d+$");
+
+      // Create a matcher for the input string
+      final Matcher matcher = pattern.matcher(mmName);
+
+      return matcher.find() ? mmName.substring(0, matcher.start()) : mmName;
+
    }
 
    public static ArrayList<String> getChain1() {
@@ -1813,234 +1588,11 @@ public final class FitnessCalculator {
       return chain1;
    }
 
-   public static double getModelCoverage(final List<String> tansformationList) {
-      if(tansformationList.equals(getChain1())) {
-         // System.out.println(getChain1());
-         return 0.3125;
-      } else if(tansformationList.equals(getChain1_1())) {
-         // System.out.println(getChain1_1());
-         return 0.3125;
-      }
-      if(tansformationList.equals(getChain1_j1())) {
-         // System.out.println(getChain1_j1());
-         return 0.3125;
-      } else if(tansformationList.equals(getChain1_1_j1())) {
-         // System.out.println(getChain1_1_j1());
-         return 0.3125;
-      } else if(tansformationList.equals(getChain2())) {
-         // System.out.println(getChain2());
-         return 0.3125;
-      } else if(tansformationList.equals(getChain2_j1())) {
-         // System.out.println(getChain2_j1());
-         return 0.3125;
-      } else if(tansformationList.equals(getChain3())) {
-         // System.out.println(getChain3());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain3_j1())) {
-         // System.out.println(getChain3_j1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain3_t1())) {
-         // System.out.println(getChain3_t1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain3_j1_t1())) {
-         // System.out.println(getChain3_j1_t1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain4())) {
-         // System.out.println(getChain4());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain4_1())) {
-         // System.out.println(getChain4_1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain4_j1())) {
-         // System.out.println(getChain4_j1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain4_1_j1())) {
-         // System.out.println(getChain4_1_j1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain4_t1())) {
-         // System.out.println(getChain4_t1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain4_1_t1())) {
-         // System.out.println(getChain4_1_t1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain4_j1_t1())) {
-         // System.out.println(getChain4_j1_t1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain4_1_j1_t1())) {
-         System.out.println(getChain4_1_j1_t1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain5())) {
-         System.out.println(getChain5());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_1())) {
-         System.out.println(getChain5_1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_j1())) {
-         System.out.println(getChain5_j1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_1_j1())) {
-         System.out.println(getChain5_1_j1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_t1())) {
-         System.out.println(getChain5_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_1_t1())) {
-         System.out.println(getChain5_1_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_j1_t1())) {
-         System.out.println(getChain5_j1_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_1_j1_t1())) {
-         System.out.println(getChain5_1_j1_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_h1())) {
-         System.out.println(getChain5_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_1_h1())) {
-         System.out.println(getChain5_1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_j1_h1())) {
-         System.out.println(getChain5_j1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_1_j1_h1())) {
-         System.out.println(getChain5_1_j1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_t1_h1())) {
-         System.out.println(getChain5_t1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_1_t1_h1())) {
-         System.out.println(getChain5_1_t1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_j1_t1_h1())) {
-         System.out.println(getChain5_j1_t1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain5_1_j1_t1_h1())) {
-         System.out.println(getChain5_1_j1_t1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain6())) {
-         System.out.println(getChain6());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain6_j1())) {
-         System.out.println(getChain6_j1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain6_t1())) {
-         System.out.println(getChain6_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain6_j1_t1())) {
-         System.out.println(getChain6_j1_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain6_h1())) {
-         System.out.println(getChain6_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain6_j1_h1())) {
-         System.out.println(getChain6_j1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain6_t1_h1())) {
-         System.out.println(getChain6_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain6_j1_t1_h1())) {
-         System.out.println(getChain6_j1_t1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain7())) {
-         System.out.println(getChain7());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain8())) {
-         System.out.println(getChain8());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain8_1())) {
-         System.out.println(getChain8_1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain8_j1())) {
-         System.out.println(getChain8_j1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain8_1_j1())) {
-         System.out.println(getChain8_1_j1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain8_h1())) {
-         System.out.println(getChain8_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain8_1_h1())) {
-         System.out.println(getChain8_1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain8_j1_h1())) {
-         System.out.println(getChain8_j1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain8_1_j1_h1())) {
-         System.out.println(getChain8_1_j1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain9())) {
-         System.out.println(getChain9());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain9_j1())) {
-         System.out.println(getChain9_j1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain9_h1())) {
-         System.out.println(getChain9_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain9_j1_h1())) {
-         System.out.println(getChain9_j1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain10())) {
-         System.out.println(getChain10());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain10_1())) {
-         System.out.println(getChain10_1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain10_t1())) {
-         System.out.println(getChain10_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain10_1_t1())) {
-         System.out.println(getChain10_1_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain10_h1())) {
-         System.out.println(getChain10_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain10_1_h1())) {
-         System.out.println(getChain10_1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain10_t1_h1())) {
-         System.out.println(getChain10_t1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain10_1_t1_h1())) {
-         System.out.println(getChain10_1_t1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain11())) {
-         System.out.println(getChain11());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain11_1())) {
-         System.out.println(getChain11_1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain11_t1())) {
-         System.out.println(getChain11_t1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain11_1_t1())) {
-         System.out.println(getChain11_1_t1());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain12())) {
-         System.out.println(getChain12());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain12_t1())) {
-         System.out.println(getChain12_t1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain12_h1())) {
-         System.out.println(getChain12_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain12_t1_h1())) {
-         System.out.println(getChain12_t1_h1());
-         return 0.4375;
-      } else if(tansformationList.equals(getChain13())) {
-         System.out.println(getChain13());
-         return 0.1875;
-      } else if(tansformationList.equals(getChain13_t1())) {
-         System.out.println(getChain13_t1());
-         return 0.1875;
-      } else {
-         return 0;
-      }
-   }
-
    public static HashMap<String, Double> getSimilarityMM() {
       final HashMap<String, Double> similarityMM = new HashMap<>();
+
+      similarityMM.put("JavaSource12Table", 0.33);
+      similarityMM.put("JavaSource2Table1", 0.33);
 
       similarityMM.put("KM32Ecore", 0.12779);
       similarityMM.put("KM32Ecore1", 0.12779);
@@ -2122,153 +1674,6 @@ public final class FitnessCalculator {
       return similarityMM;
    }
 
-   public static LinkedHashMap<String, Double> HashMapFromTextFile() {
-
-      final LinkedHashMap<String, Double> map = new LinkedHashMap<>();
-      BufferedReader br = null;
-
-      try {
-
-         // create file object
-         final File file = new File(filePath);
-
-         // create BufferedReader object from the File
-         br = new BufferedReader(new FileReader(file));
-
-         String line = null;
-
-         // read file line by line
-         while((line = br.readLine()) != null) {
-
-            // split the line by :
-            final String[] parts = line.split(":");
-
-            // first part is name, second is number
-            final String name = parts[0].trim();
-            final String number = parts[1].trim();
-            final double number1 = NumberUtils.toDouble(number);
-
-            // put name, number in HashMap if they are
-            // not empty
-            if(!name.equals("") && number1 >= 0) {
-               map.put(name, number1);
-            }
-         }
-      } catch(final Exception e) {
-         e.printStackTrace();
-      } finally {
-
-         // Always close the BufferedReader
-         if(br != null) {
-            try {
-               br.close();
-            } catch(final Exception e) {
-            }
-            ;
-         }
-      }
-
-      return map;
-   }
-
-   public static LinkedHashMap<String, Integer> HashMapFromTextFile_complexity() {
-
-      final LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
-      BufferedReader br = null;
-
-      try {
-
-         // create file object
-         final File file = new File(filePath_complexity);
-
-         // create BufferedReader object from the File
-         br = new BufferedReader(new FileReader(file));
-
-         String line = null;
-
-         // read file line by line
-         while((line = br.readLine()) != null) {
-
-            // split the line by :
-            final String[] parts = line.split(":");
-
-            // first part is name, second is number
-            final String name = parts[0].trim();
-            final String number = parts[1].trim();
-            final int number1 = NumberUtils.toInt(number);
-
-            // put name, number in HashMap if they are
-            // not empty
-            if(!name.equals("") && number1 >= 0) {
-               map.put(name, number1);
-            }
-         }
-      } catch(final Exception e) {
-         e.printStackTrace();
-      } finally {
-
-         // Always close the BufferedReader
-         if(br != null) {
-            try {
-               br.close();
-            } catch(final Exception e) {
-            }
-            ;
-         }
-      }
-
-      return map;
-   }
-
-   public static LinkedHashMap<String, Double> HashMapFromTextFile2() {
-
-      final LinkedHashMap<String, Double> map = new LinkedHashMap<>();
-      BufferedReader br = null;
-
-      try {
-
-         // create file object
-         final File file = new File(filePath2);
-
-         // create BufferedReader object from the File
-         br = new BufferedReader(new FileReader(file));
-
-         String line = null;
-
-         // read file line by line
-         while((line = br.readLine()) != null) {
-
-            // split the line by :
-            final String[] parts = line.split(":");
-
-            // first part is name, second is number
-            final String name = parts[0].trim();
-            final String number = parts[1].trim();
-            final double number1 = NumberUtils.toDouble(number);
-
-            // put name, number in HashMap if they are
-            // not empty
-            if(!name.equals("") && number1 >= 0) {
-               map.put(name, number1);
-            }
-         }
-      } catch(final Exception e) {
-         e.printStackTrace();
-      } finally {
-
-         // Always close the BufferedReader
-         if(br != null) {
-            try {
-               br.close();
-            } catch(final Exception e) {
-            }
-            ;
-         }
-      }
-
-      return map;
-   }
-
    public static TransformationModel loadModel(final String model) {
       final ResourceSet resSet = new ResourceSetImpl();
       final Resource resource = resSet.getResource(URI.createURI(model), true);
@@ -2282,6 +1687,28 @@ public final class FitnessCalculator {
          return null;
       }
       return (TransformationModel) resource.getContents().get(0);
+   }
+
+   static IModel loadModel(final String modelName, final String modelPath) {
+      // Implement the logic to load your models here.
+      // You may use the Epsilon model loaders specific to your model types.
+      // For example, EMFModel, CSVModel, or others depending on your models.
+
+      // Example for loading an EMF model:
+      final EmfModel emfModel = new EmfModel();
+      emfModel.setName(modelName);
+      emfModel.setModelFile(modelPath);
+      try {
+         emfModel.load();
+      } catch(final EolModelLoadingException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+
+      // Return the loaded model
+      return emfModel;
+
+      // Modify this according to the type of models you are using.
    }
 
    public static void main(final String[] args) throws Exception {
@@ -2326,6 +1753,32 @@ public final class FitnessCalculator {
       System.out.println("------------------------------------------\n");
    }
 
+   public static String registerMM(final String mm) {
+      try {
+         // register globally the Ecore Resource Factory to the ".ecore" extension
+         Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put("*", new EcoreResourceFactoryImpl());
+
+         final ResourceSet rs = new ResourceSetImpl();
+
+         final ExtendedMetaData extendedMetaData = new BasicExtendedMetaData(rs.getPackageRegistry());
+         rs.getLoadOptions().put(XMLResource.OPTION_EXTENDED_META_DATA, extendedMetaData);
+         final URI fileURI = URI.createFileURI(mm);
+         final Resource r = rs.getResource(fileURI, true);
+         final EObject eObject = r.getContents().get(0);
+         if(eObject instanceof EPackage) {
+            final EPackage p = (EPackage) eObject;
+            EPackage.Registry.INSTANCE.put(p.getNsURI(), p);
+            return p.getNsURI();
+         }
+
+      } catch(final Exception e) {
+         // TODO Auto-generated catch block
+         // e.printStackTrace();
+         System.err.println(e.getMessage());
+      }
+      return null;
+   }
+
    public static void registerPackage() {
       TrafochainselectionPackage.eINSTANCE.eClass();
 
@@ -2333,40 +1786,6 @@ public final class FitnessCalculator {
       final Map<String, Object> m = reg.getExtensionToFactoryMap();
       m.put("xmi", new XMIResourceFactoryImpl());
    }
-
-   /* TODO Calculation of transformation coverage for transformation chain */
-   /*
-    * public static double calculateTransformationCoverage(final TransformationModel model) {
-    * final List<Double> coverageList = new ArrayList<>();
-    * for(final Transformation t : model.getTransformationchain().getUses()) {
-    * final String atl = String.format("resources/running_example/transformations/%s2%s.atl", t.getSrc().getId(),
-    * t.getTarget().getId());
-    * final String inputMM = String.format("resources/running_example/metamodels/%s.ecore", t.getSrc().getId());
-    * final it.univaq.disim.business.datamodel.Transformation dTransformation = new
-    * it.univaq.disim.business.datamodel.Transformation();
-    * dTransformation.setATLTransformation(atl);
-    * dTransformation.setInputMetamodel(inputMM);
-    * dTransformation.isMeta_Metamodel(true);
-    * coverageList.add((double) Coverage.coverage(dTransformation));
-    * }
-    * final double finalCov = coverageList.stream().reduce(1.0, (acc, value) -> acc * value).doubleValue();
-    * return 0;
-    * }
-    */
-
-   // private static void printCorrectnessInfo(final ClassModel model) {
-   // System.out.println("------------------------------------------");
-   // System.out.println("Correctness");
-   // System.out.println("------------------------------------------");
-   // final boolean classNames = checkAllClassesDifferentNames(model);
-   // final boolean featuresEncapsulated = checkAllFeaturesEncapsulated(model);
-   // if(!classNames && !featuresEncapsulated) {
-   // System.out.println("Correctness: ok");
-   // } else {
-   // System.out.println("Correctness: Violations found.");
-   // }
-   // System.out.println("------------------------------------------\n");
-   // }
 
    private FitnessCalculator() {
    }

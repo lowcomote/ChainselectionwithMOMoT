@@ -71,7 +71,7 @@ public class TransformationStateExplorer {
          helper.doExploration(-1, monitor);
          this.getSolutions(true);
          manager.resetStateSpace(true);
-
+         manager.shutdown();
          System.out.println(getElapsedTime());
       } catch(final StateSpaceException e) {
          e.printStackTrace();

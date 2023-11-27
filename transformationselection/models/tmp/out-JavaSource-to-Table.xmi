@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:table="http://www.eclipse.org/gmt/2005/Table" xsi:schemaLocation="http://www.eclipse.org/gmt/2005/Table metamodels/Table.ecore">
+  <table:Table>
+    <rows>
+      <cells content=""/>
+    </rows>
+  </table:Table>
+  <table:Table>
+    <rows>
+      <cells content=""/>
+    </rows>
+  </table:Table>
+  <table:Row>
+    <cells content="Node.setName"/>
+  </table:Row>
+  <table:Row>
+    <cells content="Node.getName"/>
+  </table:Row>
+  <table:Row>
+    <cells content="Edge.setName"/>
+  </table:Row>
+  <table:Row>
+    <cells content="Edge.getName"/>
+  </table:Row>
+  <table:Row>
+    <cells content="Edge.setSourceNode"/>
+  </table:Row>
+  <table:Row>
+    <cells content="Edge.getSourceNode"/>
+  </table:Row>
+  <table:Row>
+    <cells content="Edge.setTargetNode"/>
+  </table:Row>
+  <table:Row>
+    <cells content="Edge.getTargetNode"/>
+  </table:Row>
+</xmi:XMI>
